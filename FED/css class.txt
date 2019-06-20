@@ -1,0 +1,114 @@
+Recap:
+-------
+HTML
+
+html
+head
+body
+p --> b,i,u strike, sub,sup
+pre
+br
+hr
+list--> ol--order( A, a, i, 1) and ul--bulletins(circle/disc/square)
+table--> thead, tbody, tr, th,td,
+	table--border, cellspacing, cellpadding
+	th-- rowspan, colspan
+img--> src, alt
+links--> a href  target
+form--> action(another) method(get/post) name
+	input type--> text,password, radio,checkbox, submit,button,reset
+                  number, date,email,time,week,range
+frameset--> iframe
+
+div--> divide the page... larger potions
+span-->smaller portions
+
+semantics:
+---------------
+header
+footer
+nav
+article
+section
+CSS: Cascading Style Sheet:
+------------------------------------
+
+1. Inline Style:  we are writing with html tags
+<p style=""></p>
+propertyname:propertyvalue;
+
+color:green;
+
+2. Internal CSS
+
+<style>
+p{
+	color:blue;
+	background-color:green;
+	font-size:35px;
+}
+</style>
+
+CSS Selectors:
+----------------------
+1. Tag Selector
+2. Id Selector---#id
+3. Class Selector---   .classname
+4. Psuedoselector---  a:visited{
+	color: red;	
+}
+	               a:hover{
+	color: green;
+
+3. External CSS
+file----  sample.css
+<link href="sample.css"  rel="stylesheet" type="text/css">
+
+--------------------------------
+Colors:
+------------
+nameof color
+rgb(255,0,0)
+rgb(255,45,12)
+
+#ff6347
+rgb(255,99,71)
+rgba(255,99,71,0.5)
+
+opacity---> 0 to 1
+1 darker
+0 lighter
+0.1 0.2 0.7
+
+Size:
+-------------
+percentage
+pixel
+em
+
+background
+border
+box model:
+--------------
+margin
+border-----layer for content,, thickness
+padding-----space between content and border
+content
+
+
+
+https://github.com/ShwethaAnil/166Shwetha
+
+
+
+
+
+
+
+
+
+
+
+
+
+

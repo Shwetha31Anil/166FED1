@@ -1,0 +1,182 @@
+Recap:
+------------
+HTML--plain
+CSS--- inline,internal
+	selectors--> tag, id(#), class(.)
+	<style>
+		div{
+		propertyname:value;
+		}
+	</style>
+
+	External:   sample.css
+	html page:
+	<link href="sample.css" rel="stylesheet" type="text/css">
+Property:
+---------------
+color---font
+background-color
+border-color
+
+color coding: name, rgb(255,255,255),
+	     rgba(255,255,0,0.5)
+	     #000000--  #ffffff
+	     #fff
+
+Size:   100%, 100px, 1 em
+
+box model:
+----------------
+margin
+border
+padding
+content
+
+margin: 30px 15px 20px 19px;
+marging-top
+margin-bottom
+margin-right
+margin-left
+
+
+border:5px style  color;
+
+gradient:  linear-gradient---color
+                 repeat-radial-gradient--
+-----------------------------------------------------------------
+JavaScript--LiveScript--1995--client side scripting
+-------------
+event handling and validation
+libraries---> node.js,express.js(server side),
+	angular(front end), react(frontend)
+	ext.js
+MEAN(mongo,express,angular,node)
+
+ECMAScript-- 5 v, 6 v
+JS--Objected Oriented Programming
+TS--TypeScript---super set of Javascript
+-----------------------------------------------------------------
+Event Handling and client side validation
+
+<html>
+	<head>
+	<script type="text/javascript">
+	
+
+	</script>
+	</head>
+</html>
+
+
+DOM: Document Object Model:
+-------------------------------------------
+
+window---> document--> form--> text/password/radio
+
+
+Datatypes:
+-----------------
+Primitive---> string, number, boolean, null, undefined
+non-primitive--> Object, Arrays
+
+
+Operators:
+-------------
+Arithmatic--- +, -,*,/,%
+logical---- and(&&), or(||) ,not(!)
+relational-- >, <, <=,>=, ==, ===, !=
+assignment---  =
+bitwise--- <<, >>, <<<, >>>
+unary --- ++, --
+ternary----        ?:
+
+
+Control Structure
+---------------------------
+conditional-- if, if else, if elsif else, switch
+unconditional-- break, continue, goto
+looping-- while, do  while, for , for in
+
+function nameoffunction(){
+}
+
+loosely typed
+
+"1"--string
+1-- number
+
+"6"---- 6
+"ss"--- will not convert as number
+switch(num)
+case 1
+case "1"
+num:number=67;
+num=484
+
+rem=num%10;
+sum=(sum*10)+rem
+
+
+
+
+
+
+
+
+
+a=7
+b="7"
+
+a==b
+a===b
+
+"1" == 1 true
+"1" === 1  false
+
+
+
+document.getElementById("num1").value
+
+
+Input:
+    Number: 153
+
+    Output:
+    It is a prime number
+
+    Explanation:
+    153 = (1*1*1) + (5*5*5) + (3*3*3) = 1+125+27 = 153
+    Here, number (153) is equal to its sum of the digits cube (153).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

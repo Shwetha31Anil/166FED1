@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<script>
+dateinfo = new Date();
+document.write(dateinfo.getDate() + " : Day of the month" + "<br>")  	
+document.write(dateinfo.getDay()	+	" : Day of the week  (0-6)" + "<br>" )	
+document.write(dateinfo.getHours()	+	" : Hour of the day " + "<br>")	
+document.write(dateinfo.getMinutes()+	" : Minutes in the hour" + "<br>") 	
+document.write(dateinfo.getMonth()	+	" : The month 	(num)" + "<br>" )
+document.write(dateinfo.getSeconds()	+ " : Seconds in the minute " + "<br>")	
+document.write(dateinfo.getTime()	+	" : Milliseconds " + "<br>")	
+document.write(dateinfo.getTimezoneOffset() +	" : Offset between local time and GMT" + "<br>") 	
+document.write(dateinfo.getFullYear()+		" : The year" + "<br>") 
+
+doj=new Date();
+doj.setDate(11);
+doj.setMonth(05);
+doj.setYear(2010);
+
+document.write(doj);
+
+document.write(dateinfo.getFullYear()- doj.getFullYear()+"<br/>");
+
+var txt="Java Full Stack Batch";
+document.write(txt.bold()+"<br/>");
+
+document.write("<p>Big: " + txt.big() + "</p>");
+document.write("<p>Small: " + txt.small() + "</p>");
+document.write("<p>Bold: " + txt.bold() + "</p>");
+document.write("<p>Italic: " + txt.italics() + "</p>");
+document.write("<p>Fixed: " + txt.fixed() + "</p>");
+document.write("<p>Strike: " + txt.strike() + "</p>");
+document.write("<p>Fontcolor: " + txt.fontcolor("Red") + "</p>");
+document.write("<p>Fontsize: " + txt.fontsize(16) + "</p>");
+document.write("<p>Lowercase: " + txt.toLowerCase() + "</p>");
+document.write("<p>Uppercase: " + txt.toUpperCase() + "</p>");
+
+document.write("<p>Subscript: " + txt.sub() + "</p>");
+document.write("<p>Superscript: " + txt.sup() + "</p>");
+
+document.write("<p>Link: " + txt.link("http://pace.patni.com") + "</p>");
+
+
+
+	
+</script>
+</BODY>
+</HTML>

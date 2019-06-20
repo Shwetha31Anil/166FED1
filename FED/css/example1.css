@@ -1,0 +1,16 @@
+body{
+ background-image:url("file:///C://imp/trainings/Mphasis/2019 Java batch/166 batch/FED/img1.jpg");
+background-repeat:no-repeat;
+background-attachment: scroll;
+}
+p{
+      color: green;
+       //border-bottom: 5px dashed blue;
+       //border-left: 10px solid red;
+      /* border-style:dashed;
+       border-width:15px;
+       border-color: orange;*/
+       border: 10px solid transparent;
+        border-radius: 30px;
+border-image: url("file:///C://imp/trainings/Mphasis/2019 Java batch/166 batch/FED/rose.png") 50 round;
+}

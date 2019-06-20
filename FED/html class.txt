@@ -1,0 +1,55 @@
+html tag
+head
+body
+title
+heading---> h1 to h6
+text---> p, b, i, u, sup, sub, strike, strong, em
+<br></br>---->    <br/>
+<hr>
+
+<marquee style="height:20;width:200" scrollamount="200" scrolldelay="500">
+
+
+align= left/right/center/justify    valign=""
+images---> <img src="images/f1.jpg" alt="image not available"></img>
+links---> <a href="second.html">Click Here</a>
+tables---->
+<caption>Employee Data</caption>
+<table border="1">
+<thead>
+<tr><th>Employee Name</th><th>Email</th></tr></thead>
+<tbody>
+<tr><td>Athul</td><td>atul@mphasis.com</td></tr>
+</tbody>
+</table>
+
+list:   ordered list
+	<ol type="1">
+	  <li></li>
+	</ol>
+          unordered list
+	<ul type="square">
+	</ul>
+
+forms
+<form name="fname" action="" method="get/post">
+<label>
+<input type="text/password/radio/checkbox">
+button/submit/reset
+
+html 5
+<input type="email/number/date/time/range"
+
+audio
+video
+</form>
+
+
+
+file:///C:/imp/trainings/Mphasis/2019%20Java%20batch/166%20batch/FED/third.html?uname=&pwd=&pwd=&lan=EN&email=guptha.shwetha%40gmail.com&dob=2019-06-04&ph=5&address=&state=-----select-------&city=-----select-------
+
+
+file:///C:/imp/trainings/Mphasis/2019%20Java%20batch/166%20batch/FED/third.html
+
+
+
