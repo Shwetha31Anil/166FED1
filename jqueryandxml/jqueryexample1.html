@@ -1,0 +1,24 @@
+<html>
+<head>
+<link href="jqueryui/jquery-ui.css" rel="stylesheet">
+<link href="jqueryui/jquery-ui.structure.css" rel="stylesheet">
+<link href="jqueryui/jquery-ui.theme.css" rel="stylesheet">
+</head>
+<body>
+<h2>Jquery UI Demos</h2>
+<div>
+	<input type="text" id="dateinput">
+</div>	
+<script src="js/jquery.js"></script>
+<script src="jqueryui/jquery-ui.js"></script>
+<script>
+ $("#dateinput").datepicker({
+	numberOfMonths:1,
+	changeYear:true,
+	changeMonth:true,
+	minDate: new Date(2019,5,1),
+	maxDate:new Date(2022,2,6)	
+});
+</script>
+</body>
+</html>

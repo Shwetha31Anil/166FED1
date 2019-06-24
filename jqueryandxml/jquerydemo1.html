@@ -1,0 +1,85 @@
+<html>
+<head>
+<style>
+	.mydivs{
+	border: 3px solid blue;
+	margin:8px;
+	padding:15px;	
+	}
+	div p{
+	color: black;	
+	}
+	#cube{
+	width:50px;
+	height:50px;
+	background-color:green;
+	opacity:0.4;
+	position:absolute;
+	padding:20px;              
+	}
+</style>
+</head>
+	<body>
+	<h2 > Selectors in  jQuery</h2>
+	<div id="firstdiv" class="mydivs">
+	<p> This is the first paragraph in first division</p>
+	<p> This is the second paragraph in first division</p>
+	</div>
+<div id="seconddiv" class="mydivs">
+	<p> This is the second paragraph in first division</p>
+	</div>
+<div id="thirddiv" class="mydivs">
+	<ul>
+	<li>List Item1</li>
+	<li>List Item2</li>
+	<li>List Item3</li>
+	<li>List Item4</li>
+	</ul>
+</div>
+<div id="cube" class="mycube">
+</div>
+	<br/>
+	<br/>
+<br/>
+	<br/>
+<br/>
+	<br/>
+<div>
+	<button id="btn1">FadeOut</button>
+	<button id="btn2">FadeIn</button>
+<button id="btn3">FadeToggle</button>
+<button id="btn4">Animate</button>
+<button id="btn5">MultiEffects</button>
+</div>
+	</body>
+	<script src="js/jquery.js">
+	</script>
+	<script>
+	$(document).ready(function (){
+	$("#btn1").mouseenter(function (){
+	$("#firstdiv p:first").fadeOut			(3000, function (){alert("fade done");});
+	
+	});
+	
+	$("#btn2").mouseout(function (){
+	$("#firstdiv p:first").fadeIn			(500);});
+	
+	$("#btn3").mouseover(function (){
+	$("#firstdiv p:first").slideToggle			("slow");});
+
+	$("#btn4").click(function(){
+	$("#cube").animate({
+	left:'250px',
+	opacity:'1',
+	width:'200px',
+	height:'100px'
+	},2000)
+	});
+
+       $("#btn5").click(function(){
+	$("#firstdiv").slideUp(2000).slideDown(2000).fadeOut(1000).fadeIn(1000);	
+});
+	
+});
+	</script>
+</html>

@@ -1,0 +1,150 @@
+XML:
+----------
+Extensible Markup Langauge
+we use to store the data or exchage the data or publish the data
+Universal Language--XML, JSON
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+ Prolog--
+
+<employees>
+	<employee>
+	<empid>1001</empid>
+	<empname>Bhoomika</empname>
+	</employee>
+	<employee>
+	<empid>1002</empid>
+	<empname>Rashmi</empname>
+	</employee>
+</employees>
+
+<?xml version="1.0" encoding="utf-8"?>
+<employees>
+	<employee empid="1001">
+	<empname>Bhoomika</empname>
+	</employee>
+	<employee empid="1002">
+	<empname>Rashmi</empname>
+	</employee>
+</employees>
+
+Rules:
+-------
+1. DTD  Data type defination  <!DOCTYPE
+2.XSD   XML Schema defination
+	<xs:schema
+
+External DTD :    example1.xml   
+-----------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "Note.dtd">
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>
+
+Note.dtd
+-----------
+<!DOCTYPE note
+[
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+
+Internal DTD:  example2.xml
+----------------------
+<?xml version="1.0"?>
+<!DOCTYPE note [
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend</body>
+</note>
+
+
+Internal XSD:  example3.xml
+-----------------------
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="note">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="to" type="xs:string"/>
+      <xs:element name="from" type="xs:string"/>
+      <xs:element name="heading" type="xs:string"/>
+      <xs:element name="body" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
+
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend</body>
+</note>
+
+
+External XSD: example4.xml
+--------------------------------------
+<?xml version="1.0"?>
+
+<note
+xmlns="https://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="https://www.w3schools.com/xml note.xsd">
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note.xsd
+----------------
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.w3schools.com"
+xmlns="https://www.w3schools.com"
+elementFormDefault="qualified">
+
+<xs:element name="note">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="to" type="xs:string"/>
+      <xs:element name="from" type="xs:string"/>
+      <xs:element name="heading" type="xs:string"/>
+      <xs:element name="body" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

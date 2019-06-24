@@ -1,0 +1,43 @@
+<html>
+<head>
+<link href="jqueryui/jquery-ui.css" rel="stylesheet">
+<link href="jqueryui/jquery-ui.structure.css" rel="stylesheet">
+<link href="jqueryui/jquery-ui.theme.css" rel="stylesheet">
+<style>
+.mydivs{ border: 5px solid green; margin: 10px;
+	padding:20px;}
+</style>
+
+</head>
+<body>
+<div class="mydivs">  <h1>Sample Customized alert</h1><button id="btn1">Click Me</button></div>
+<div id="messagebox" title="MessageBox" class="mydivs1" style="display:none" >
+	<p>Are you Ok?</p>
+</div>	
+<script src="js/jquery.js"></script>
+<script src="jqueryui/jquery-ui.js"></script>
+<script>
+	
+	$("#btn1").click(function(){
+	$("#messagebox").dialog({
+	title: "Custom box",
+	draggable:true,
+	resizeable:true,
+	buttons: [{
+	         text:"close",
+	         icon: "ui-icon-heart",
+	         click: function(){
+		$(this).dialog("close");	
+		}
+		},
+	               { text:"Ok",
+	         icon: "ui-icon-heart",
+	         click: function(){
+		$(this).dialog("close");	
+		}
+	           }]
+	});
+	});
+	</script>
+</body>
+</html>

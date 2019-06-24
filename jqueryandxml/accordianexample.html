@@ -1,0 +1,36 @@
+<html>
+<head>
+<link href="jqueryui/jquery-ui.css" rel="stylesheet">
+<link href="jqueryui/jquery-ui.structure.css" rel="stylesheet">
+<link href="jqueryui/jquery-ui.theme.css" rel="stylesheet">
+</head>
+<body>
+	<div id="panels">
+	<div>HTML</div>
+	<div>Html is a language is used for web delevelopement.Html 4 is static web pages.
+Html is a language is used for web delevelopement.Html 4 is static web pages.</div>
+<h3>CSS</h3>
+	<p> CSS is Cascading Style Sheet used for styling of web pages and to do animations.
+CSS is Cascading Style Sheet used for styling of web pages and to do animations.CSS is Cascading Style Sheet used for styling of web pages and to do animations.
+CSS is Cascading Style Sheet used for styling of web pages and to do animations.CSS is Cascading Style Sheet used for styling of web pages and to do animations.
+CSS is Cascading Style Sheet used for styling of web pages and to do animations.CSS is Cascading Style Sheet used for styling of web pages and to do animations.
+CSS is Cascading Style Sheet used for styling of web pages and to do animations.</p>
+<h3>JS</h3>
+	<p> JS is JavaScript used for event handling and  to do validations.
+JS is JavaScript used for event handling and  to do validations.</p>
+	</div>	
+<script src="js/jquery.js"></script>
+<script src="jqueryui/jquery-ui.js"></script>
+<script>
+	$("#panels").accordion({
+	collapsible:true,
+	event:'click',
+	active: false,
+	animate:900,
+	heightStyle:true,
+	icons:{ header:"ui-icon-locked",activeHeader:"ui-icon-minus"}
+	});
+</script>
+
+</body>
+</html>

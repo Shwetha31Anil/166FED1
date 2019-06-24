@@ -1,0 +1,163 @@
+Front End Development
+--------------------------------
+Recap:
+------------
+JavaScript
+
+<script>
+//      shwetha    guptha      
+ function validation(){
+var uname= document.getElementById("t1");
+//document.form.textboxname.value
+if(uname.value.trim() == ""){
+	uname.style.bordercolor=red;
+	return false;
+}else{
+	return true;
+}
+
+// regExp   var reg=/DX00/
+	var reg=/^([a-zA-Z]*)$/
+var reg=/^([a-zA-Z]{3,9})@().()$/
+var reg=/^([^a-zA-Z]{3,9})@().()$/
+var reg=/^([0-9]{3,9})@().()$/
+if(reg.test(uname))
+
+}
+
+</script>
+<body>
+<form onsubmit="return validation()" action="">
+<input  required>
+<button onclick="return validation()"></button>
+
+
+
+<form>
+<input  required>
+<button onclick="window.open()"></button>
+
+var arr[3]={544,213,34};
+var arr=new Array();
+arr[0]=2312;
+arr[1]=2323;
+
+var arr[]={1:6,2:5,6:9};
+
+<select onchange="update()">
+</select>
+ 
+fadeIn--
+id=setInterval(method,2000);
+clearIterval(id);
+
+setTimeout
+clearTimeout
+-----------------------------------------------------------------jQuery-- library of java script
+	crossbrowser code
+
+jQuery.com---library
+
+example1.js
+
+<script src="example1.js">
+</script>
+<script>
+	function xyz(){}
+</script>
+
+<script src="js/jquery.js">
+</script>
+
+$("#btn1").click(fn1);
+function fn1(){
+	$("h2").fadeToggle(4500);
+}
+
+$(document).ready(function (){
+$("#btn1").click(function (){
+$("h2").fadeToggle(4500);});
+});
+selectors:---  tagname, #id, .class, #id1,id2  
+	#id1 p, #id1 p:first, p:even, p:odd
+effects:--- fadeIn, fadeOut,fadeToggle
+	hide, show, toggle
+	slideUp,slideDown,slideToggle
+events:--- click, dblclick, mouseover, mouseenter,mouseout
+
+animate
+
+DOM Manipulations:
+------------------------------
+text(), html(), attr(), css()
+
+append(), after(), prepend(), before(), remove(),
+empty()
+
+addClass(), removeClass()
+
+
+jquery-ui:-----  datepicker, tootip, progressbar,
+	accordian,tabs
+
+	jquery-ui.css
+	jquery-ui.theme.css
+	jquery-ui.structure.css
+
+jquery-ui.js
+
+
+
+
+
+
+
+$(document).ready(function (){
+	$("selector").event(function (){
+	       $("selector").effect(milliseconds/"slow/fast");	
+});	
+});
+
+
+	
+}
+
+
+
+
+
+
+selectors----- $(h2).fadeToggle(200);
+effects
+
+$(document).ready( function (){
+	$("#btn1").click(fn1);
+	
+	function fn1(){
+	$("h2").fadeToggle(5600);
+	}	
+}
+
+
+$(document).ready( function (){
+	$("#btn1").click(function (){
+	$("h2").fadeToggle(5600);
+	});
+	
+		
+})
+
+}
+
+
+
+
+function (){}
+
+function validate(){
+}
+
+
+
+
+
