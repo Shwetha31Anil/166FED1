@@ -1,0 +1,29 @@
+3.1: Create a method which can perform a particular String operation based on the user’s choice.
+The method should accept the String object and the user’s choice and return the output of the
+operation.
+Options are
+•	Add the String to itself
+
+•	Replace odd positions with #
+
+•	Remove duplicate characters in the String
+
+•	Change odd characters to upper case
+
+3.2: Create a method that accepts a String and checks if it is a positive string. A string is considered a positive string, if on moving from left to right each character in the String comes after the previous characters in the Alphabetical order.For Example: ANT is a positive String (Since T comes after N and N comes after A). The method should return true if the entered string is positive.
+
+3.3: Create a method to accept date and print the duration in days, months and years with regards to current system date.
+
+3.4: Revise exercise 3.3 to accept two LocalDates and print the duration between dates in days, months and years.
+
+3.5: Create a method to accept product purchase date and warrantee period (in terms of months and years). Print the date on which warrantee of product expires.
+
+3.6: Create a method which accept zone id and print the current date and time with respect to given zone. (Hint: Few zones to test your code. America/New_York, Europe/London, Asia/Tokyo, US/Pacific, Africa/Cairo, Australia/Sydney etc.)
+
+3.7: Modify Lab assignment 2.3 to perform following functionalities:
+
+a)	Add a method called calculateAge which should accept person’s date of birth and calculate age of a person.
+
+b)	Add a method called getFullName(String firstName, String lastName) which should return full name of a person
+
+Display person details with age and fullname.
