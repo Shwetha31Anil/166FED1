@@ -1,0 +1,5 @@
+8.1: Write a program to read content from file, reverse the content and write the reversed content to the file. (Use Reader and Writer APIs).
+
+8.2: Create a file named as “numbers.txt” which should contain numbers from 0 to 10 delimited by comma. Write a program to read data from numbers.txt using Scanner class API and display only even numbers in the console.
+
+8.3: Enhance the lab assignment 6.3 by adding functionality in service class to write employee objects into a File. Also read employee details from file and display the same in console. Analyze the output of the program.

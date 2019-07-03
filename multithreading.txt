@@ -1,0 +1,31 @@
+
+13.1: Write a program to do the following operations using Thread:
+
+•	Create an user defined Thread class called as “CopyDataThread .java” .
+
+•	This class will be designed to copy the content from one file “source.txt ” to another
+
+file “target.txt” and after every 10 characters copied, “10 characters are copied” message will be shown to user.(Keep delay of 5 seconds after every 10 characters read.)
+
+•	Create another class “FileProgram.java” which will create above thread. Pass required File Stream classes to CopyDataThread constructor and implement the above functionality.
+
+13.2: Write a thread program to display timer where timer will get refresh after every 10seconds.( Use Runnable implementation )
+
+
+13. 3: Bank Program data store into file.
+
+13.4: Write a java program that creates a child thread and print nos. 1 to 10 through main thread and prints alphabets A to J through child thread. While printing through any of the thread, the output should display the name of the current thread.
+
+
+13. 5Write a java program to create 3 threads, each thread printing nos. 1 to 5, 11 to 15 and 21 to 25 with a gap of minimum one second between two outputs from the same thread. The main thread should print the alphabets A to M with a gap of minimum 5 seconds between two prints.
+
+13. 6:Write a java program that creates three threads which will print nos. 1 to 50 each, and the main thread should print nos. 1 to 5. Ensure that the main thread should be the last one to die.
+
+
+13. 7: Write a program to do the following
+	Let one thread print “Mphasis” and another thread print “Private Limited” in a synchronized fashion.
+	The output should be
+	Mphasis Private Limited
+	Mphasis Private Limited
+	Mphasis Private Limited
+	Mphasis Private Limited
