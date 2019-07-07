@@ -1,0 +1,234 @@
+ReCap:
+
+Java:  System--out, in, err
+int, char, short,byte, long, float,double, boolean
+class Calculator{
+public static void main(String args[]){
+Scanner sw=new Scanner(System.in);
+//int num1=Interger.parseInt(args[0]);
+int num1=sw.nextInt();
+String s1=sw.next();// Java Prograaming
+nextLine();
+
+System.out.print("Welcome "+num1);
+}
+}
+
+javac Calculator.java---> Calculator.class
+java Calculator 56 23 6
+
+-----------------------------------------------------------------
+OOPs : Object Oriented Programming
+
+Object---any real world entity which have properties/state and behaviour
+attributes    and methods
+Class--blue print of a object
+Constructor
+Polymorphism
+	1. CompileTime/static/overloading
+	2. RuntimeTime
+Encapsulation: Wrapping up of data with member access specfires and access by setters/getters or methods
+Inheritence
+Abstraction
+
+class Building{
+  double height, width;
+   int number_of_rooms;
+ 
+ void construct(double height,double width,int numberrooms){
+System.out.print("Building Construted");
+System.out.print(height+" "+ width+" "+numberrooms);
+}
+
+public static void main(String args[]){
+  Building building=new Building();
+	building.construct();
+}
+}
+
+
+To set the values to the variables will use
+1. Constructor----special method present in the class.. which have same name of a class
+Each and every java class will have default constructor--this will be able create the object
+2. Setters
+
+
+
+
+Overloading:---Compile time
+ 1. name of the methods shold be same but signature of the arguments different
+	a. number of arguments
+	b.data type of arguments differ
+	c. order of arguments
+
+
+Class ---> properties , setters/constructor and getters
+POJO class--> plain old java object
+
+
+Member access Specfires:
+-------------------------------------
+private ---within the class
+protected--relation
+default---if you not mention anything ---with in the package
+public--any where with in the project--with in the package and subpackes
+
+
+all instance variables in a class are private
+and
+all methods are in public
+
+public class NameofClass{
+// instance variables
+private datatype varaibalename;
+//set the values   constructor or setter
+public NameofClass(){} //default constructor
+public NameofClass(datatype variablename//localvariable){
+this.instancevariable=localvariable;
+}//parameterized constructor
+//methods
+public returntype settermethod(datatype variablename//localvariable){
+this.instancevariable=localvariable;
+}//setter
+//display
+public void gettermethod(){
+sop statements;
+}
+
+//getter method
+public returntype getVaraibleName(){
+ return varibaleName;
+}
+
+}
+
+
+
+
+
+add(int a,int b)
+add(float a, float b)
+
+add(int a,int b)
+add(int b,int a)
+
+int a=10;
+float a=10f;
+	
+private--within the class
+protected--for childs
+default--with in package
+public--with in project(with in packages and subpackages)
+
+Overloading:--- constructor /methods
+  same method with different signature of arguments
+	1. number of arguments will differ
+	2. order of arguments
+	3. datatype of arguments
+
+
+System.out.print("")
+print(i);10 methods
+println()
+
+Inheritence: extends
+--------------
+
+Object--Parent class
+
+Parent class/super class
+Child class/sub class
+
+
+Object-  toString()
+	equals
+	hascode
+	getClass
+	wait
+	notify 
+	notifyAll
+
+one parent---one child
+one parent--multiple Children    Single level inheritence
+
+GrandFather    Father	    child    multilevel
+one parent-- one child--- one child
+
+Father    Mother    -- one child  multiple 
+
+Hybrid 
+
+public class Person{
+   long adarNum;
+  String name;
+public Person(long adarNum, String name){
+
+this.adarNum=adarNum;
+this.name=name;
+}
+public void getPersonDetails(){
+sops
+}
+}
+
+class Employee extends Person{
+private int empid;
+private double salary;
+private String project;
+
+public Employee(long adarNum,String name,int empid,double sal,String pro){
+super(adarNum,name);
+this.empid=empid;
+this.salary=sal;
+this.project=pro;
+}
+
+
+
+}
+
+class Student extends Person{
+}
+
+When you have same method in the parent and child--- Dynmaic polymorphism/method overriding
+class A{
+public void display(int a){}}
+class B extends A{
+public void display(int a){}
+}
+
+
+Father    getMoney()
+Mother  getMoney()
+
+Son  extends Father,Mother
+
+
+Because of diamond problem java doesnot supports Multiple inheritence
+-----------------------------------------------------------------
+static variable:   static String school="xyz";
+static method:  class A{
+public static int getMethod(){
+System.out.print("Method called");
+}
+public static void main(String args[]){
+	A.getMethod();
+}
+}
+static block
+{}
+
+two type of methods
+static ---class  Class.methodname();
+non-static---object   o1.methodname();
+
+Final :  
+final variable :   final double PI=3.14;
+final class: shouldnot inheirt... immutable class 
+final method: cannot override
+
+
+ 
+
+
+

@@ -1,0 +1,77 @@
+Java Memory
+----------------
+GC
+
+Heap--- 1. Young Generation( Eden space, Survivor1, Survivor 2)
+              2. Tenured or old generation
+              3. Per Area of Heap or Permanent 
+
+
+Heap
+Stack
+Method Area
+Native Method Area
+Program Register counter
+
+
+
+
+
+.java-- c--.java
+
+
+compile--
+Interpreter
+Class Loader
+Linker
+
+Heap will be used by all parts of the application but stack memory used by one thread execution
+-----------------------------------------------------------------java 8 features
+ java.time.*;
+
+LocalDate today=LocalDate.now();
+LocalDate doj=LocalDate.of(2010, 06, 11);
+Period p=Period.between(doj,today);
+
+Employee
+id: int
+name:String
+doj:LocalDate
+
+LocalTime l=LocalTime.now(ZoneId.of("Asia/Calcutta"));
+
+Instant i=Instant.now();
+
+
+Localization
+Internationalization---- i18n
+
+Date:     dd/MMM-YYYY
+	D MM yy
+
+
+
+Employee--- id, name,job,doj,salary,commission,
+	Department
+Department---deptno,dname,location
+
+
+
+Encapsulation
+
+latebinding
+
+
+
+Number: %,
+$--- formatNumber
+
+
+
+
+
+
+
+
+
+

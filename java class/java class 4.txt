@@ -1,0 +1,249 @@
+Recap:
+------------
+OOPS --Abstraction
+              abstract methods
+      abstract  class --concrete methods only
+abstract  class  -- concrete and abstract methods
+abstract  class/interface --- only abstract methods
+interface A{
+public int getA();
+public int getB();
+}
+Any interface contains only one abstract method it is called
+SAM(Single abstract method)--- Functional Interface from java 8
+@--annotation-- meta data 
+@Functional
+interface A{
+public int getA();
+public int getB();-- compilation error
+}
+
+String-- immutable  class
+	String s="Mphasis";//SCP
+String s1=new String("Mphasis");//Heap
+if(s1==s)  return false;
+if(s1.equals(s)) return true;
+s1.equalsIgnoreCase
+charAt()
+indexOf
+lastIndexOf
+replace
+replaceAll
+codePointAt
+codePointBefore
+codePointAfter
+subString(startingidex,how many);
+s2.replace("p","c");//Mchasis Private Limited
+String s2="Mphasis Private Limited";
+s2.subString(3,5);//asis 
+
+
+== used to compare the primitive data type
+when you want to compare objects we have to use equals method
+
+to make string manipulations then will go for
+StringBuilder--mutable type of string, 1.5
+StringBuffer--mutable type of string, java 1
+
+Date--- java.util.Date-
+	java.sql.Date--db opeartions
+//deprecated methods
+Date d1=new Date();
+d1.getDate();
+d1.getMonth(); // 0 to 11
+d1.getYear();// 1900
+
+Calendar  c1 -- abstract class
+Calendar c1=new GreogreanCalendar();
+c1.set();
+c1.get();
+
+java 8:
+-----------
+java.time.*;
+
+LocalDate
+LocalTime
+LocalDateTime
+-----------------------------------------------------------------
+
+to handle the error of our program we can write the program in two ways
+
+1. Defensive Approach
+2. Exception Approach
+
+if else
+which with the syntaxes 
+
+Exception Handling:
+-----------------------------
+	Object
+	Throwable class
+       Exception      Error ( which we caanot handle)
+(which we can handle)
+
+RuntimeException--- unchecked Exception
+	ArithematicException
+	ArrayIndexOutOfBoundsException
+	NullPointerException
+	
+
+Checked Exceptions
+----------------------------
+IOException-- FileNotFoundException, 		EOFException
+SQLException
+JDBCException
+SocketException
+ServletException
+JSPException
+
+e.printStackTrace();--trace of the error
+
+
+normal code
+critical code
+
+try--- to write critical code
+catch-- to handle the exception will use catch
+finally-- mandatory execution
+throws -- chaining the exceptions
+throw--to call explicitly, will always create instance of exception
+
+
+try{
+}catch(Child)
+}catch(Parent)
+
+2.
+class A{
+public void withdraw()
+}
+class B extends A{
+public void withdraw()throws unchecked
+}
+
+3. 
+class A{
+public void withdraw()throws Checked
+}
+class B extends A{
+public void withdraw()throws checked
+}
+
+
+
+
+
+try with resources
+
+class Parent{
+    public void show()throws ArithmeticException{}
+}
+class Child extends Parent{
+	@Override
+	public void show(){}
+}
+
+
+
+toString---Object
+
+
+
+m3()throws SQLException,Exception{   div= a/b;}
+m2()throws Exception{ m3();}
+m1()throws Exception{  m2();}
+}
+main(){  try{ m1();}catch(){
+}}
+
+try{
+int div=a/b;
+if(b< 10)
+throw  new MyException("b should be less than 10");
+else
+System.out.print(div);
+
+}catch(MyException e){
+e.printStackTrace();}
+
+class MyException extends Throwable{}
+class MyException extends Exception{
+ MyException(String msg){
+	super(msg);
+}
+}//any
+class MyException extends RuntimeException{}
+//unchecked exception
+
+
+Boxing:
+--------------
+int i =4;
+primtive data to object is autoboxing
+Integer i1=new Integer(i);// boxing
+Integer j=i;//AutoBoxing
+object to primitive  datatype is unboxing
+int j1=j.intValue();//unboxing
+int k=j;//Autounboxing
+----------------------------------------------------------------
+Object Copying
+1. Shallow Copy
+2. Deep Copy
+3. Cloning
+
+Shallow Copy:
+------------------
+
+Abc obj1=new Abc();
+obj1.i=10;
+obj1.j=12;
+
+Abc obj2=obj1;
+
+
+DeepCopy:
+------------------
+Abc obj1=new Abc();
+obj1.i=10;
+obj1.j=12;
+
+
+Abc obj2=new Abc();
+obj2.i=obj1.i;
+obj2.j=obj1.j;
+
+Cloning:
+----------
+
+Abc obj1=new Abc();
+obj1.i=10;
+obj1.j=12;
+
+Abc obj2=obj1.clone();
+
+
+Cloneable---marker interface--the interface doesnot have any method and which have special meaning to it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

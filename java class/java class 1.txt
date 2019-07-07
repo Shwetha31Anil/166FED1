@@ -1,0 +1,164 @@
+JAVA
+--------
+Digital Market--Tv setup
+Desktop Applications--game
+WebApplication--
+EnterpriseApplication--
+
+J2SE--Standard Edition
+J2EE--Enterprise Edition
+J2ME--Micro Edition
+
+Java:
+W4-- Why, What , Where and How
+
+PlatformIndependent
+
+JVM--Java Virtual Machine--dependent on OS
+
+Open Source:  10 
+OpenJDK--Modular Programming
+
+Architectural Neutral
+Strong typing
+Roboust---Garbage Collector(GC)
+OOP
+
+JDK
+JRE
+
+
+
+Versions:
+-----------------
+JDK 1.0
+JDK 2
+
+
+JDK 5
+JDK 6
+
+JDK 8---functional Programming
+JDK 9-- Modular Programming
+JDK 10
+JDK 11--
+JDK 12
+
+Desktop---Swing, AWT, JavaFX
+Web--J2EE(Servlet, jsp)
+Enterprise--EJB
+
+-----------------------------------------------------------------
+Programming:
+------------------
+logical
+syntactical
+implementation
+Performance
+
+Time Complexcity( big O)
+Space Complexcity(theta or omege)
+
+JAVA Programming
+----------------------------
+.gt
+Sample.java
+javac Sample.java --byte code    Sample.class
+java Sample---Output
+.class--.java---decompilation
+
+JDK---8
+jdk--bin(executables), jre(lib   rt.jar)
+jre--libs
+
+Install java:
+-------------
+Download JDk--- oracle
+
+Configure:
+---------------
+
+path:--- applications(javac java)
+path
+C:\Program Files\Java\jdk1.8.0_191\bin
+CLASS_PATH   
+C:\Program Files\Java\jdk1.8.0_191\jre\lib
+CLASS_PATH:---(libs)
+
+optional:
+JAVA_HOME: C:\Program Files\Java
+JDK_HOME:C:\Program Files\Java\jdk1.8.0_191
+JRE_HOME: C:\Program Files\Java\jre1.8.0_191
+
+
+Variables:
+----------
+datatypes:
+-------------------		Wrapper Classes
+byte--- 1byte		Byte
+char--2bytes---'   '		Charector
+short---2 bytes		Short
+int--- 4bytes		Integer
+long--8bytes		Long
+float--4bytes		Float
+double--8bytes		Double
+boolean--- true/false		Boolean
+
+int num1,num2
+
+Opertaors
+
+= assignement
+== compare  relational
+
+control statements:
+--------------------------
+if, if else, if else if else, switch
+	case break default
+break, contine
+while, do.. while, for
+for(int i=0;i< 5;i++)
+for(int i:a)
+forEach
+
+
+//
+Command line arguments
+Runtime arguments
+
+Package Statndards:
+------------------------
+
+com.mphasis.training.javatraining.basic
+com.mphasis.training.javatraining.oops
+
+org.library.module
+xava.module
+com.comapnayname.xava
+
+java.lang--
+java.util
+com.sun.
+com.oracle.
+
+
+Given an int n, return true if it is within of 10 of 100 or 200. Note: Math.abs(num) computes the absolute value of a number.
+
+nearHundred(4)--true
+nearHundred(89)--false
+
+boolean nearHundred(int n){
+return ((Math.abs(100-n)<=10) || (Math.abs(200-n)<=10)
+}
+
+
+
+
+
+
+
+
+
+
+
+

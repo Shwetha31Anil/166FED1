@@ -1,0 +1,229 @@
+Recap:
+---------
+MultiThreading-single process multiple threads will work, it will share same memory,, it is lightweight
+MultiProcessing-heavy weight
+
+Thread--Small piece of code
+
+2 ways
+extends Thread
+implements Runnable
+
+Life cycle states methods:
+---------------------------
+born	start
+runnable    
+running      run
+blocked     sleep(1000), sleep(1000,700), wait(),join(),join(milliseconds), join(milliseconds,nanoseconds)
+dead    destroy//depecated
+
+getState()
+Thread()
+Thread(String name)
+Thread(Ruunable target)
+Thread(Ruunable target, String name)
+
+Object(Numberprint)---oddnumber
+		--evennumber
+Bus--Passenger 1
+       --Passenger 2
+run(){}
+t1.start()---run
+
+ThreadScheduler---> schedule the thread to work
+
+based on two algorithm--Time slicing,premtive algorithm
+
+setPriority
+getPriority
+MAX_PRIORITY
+MIN
+NORM
+
+
+
+t1----5
+t2----10
+t3----9
+t4----9
+
+yield--allows same priority threads
+
+setName
+getName
+getId
+
+only one thread should work at a time an object--
+Synchronization
+
+multiple threads on multiple objects--static synchronization
+
+
+
+static synchronized void printodd(){
+}//sync methods
+
+
+void printodd(){
+  print1
+synchronized{
+ stat2;
+stst3;
+}
+}//synch blocks
+
+
+Thread1
+Thread2
+Thread1
+Thread2
+
+producerconsume problem
+inter thread communication
+
+wait
+notify notifyAll     p1  --1 c1
+class Market{
+boolean value=true;
+	synchronized void procduces(int i){
+if(!value)
+wait(); 
+Sos("producing "+ i);
+value=false;
+notify();
+}
+synchronized void consumes(int i){
+if(value)
+wait();
+ Sos("consume "+ i);
+value=true;
+notify()
+}
+}
+class Producer extends Thread{
+Market m;
+Producer(Market m){this.m=m;}
+public void run(){
+for(int i=0;i<10;i++){
+ m.produces(i);}
+}
+}
+classConsumer extends Thread{
+
+Market m;
+Consumer(Market m){this.m=m;}
+public void run(){
+for(int i=0;i<10;i++){
+ m.consume(i);}
+}
+-----------------------------------------------------------------
+IO--Input output
+java.io.*;
+java.nio.*;
+
+ByteStream--the data will be of type byte
+CharecterStream---the data will be of type charecter
+
+
+ByteStream----InputStream ----read():byte
+	---OutputStream---write(byte), flush()
+	close()		write(byte[])
+FileInputStream
+FileOutputStream
+
+BufferedInputStream
+BufferdOutputStream
+
+ByteArrayOutputStream---write the data to multiplefiles at a time
+
+SequenceInputStream--read the data from two files
+
+---primitive data type
+DataInputStream
+DataOutputStream---writeInt, writeFloat,
+
+objects--
+ObjectOutputStream--writeObject
+ObjectInputStream---readObject
+class Employee  implements Serializable--marker interface
+state of an object to byte is called serialization
+byte stream to an object is called deserialzation
+
+LineNumberInputStream
+LineNumberOutputStream
+
+CharecterStream----- Reader   read: char
+	        -----Writer   write(chare)
+
+FileReader
+FileWriter
+
+BufferedReader
+BufferedWriter
+
+CharArrayReader
+
+
+PrintWriter---supports formatting---html tags
+
+
+custom serialization
+-------------------------
+override
+writeObject()
+readObject()
+
+Collections: api(Application program interface)
+------------------------
+
+store more than one object--Arrays
+int[] a1={};
+
+Employee[] earray={e1,e2,e3};
+
+static 
+dynamic nature of array--- Vector--growble nature of array
+
+size and capacity(100%)
+import java.util.Vector;
+Vector v1=new Vector();
+v1.add(20);
+v1.add(30);    size=2 capacity 4
+v1.add(67);   size= 3 capacity 6
+
+Hashtable ht=new Hashtable();
+ht.put(12,"Room1");
+ht.put(13,"Room2");
+key value
+
+java 1.2 version
+comparator: java.util
+comparable: java.lang
+
+collection api:   Collections.sort, shuffle,binarySearch,
+Iterable       iterator(uni), listIterator(bidirection), 	enumeration
+Collection
+
+List-- allows duplicates
+     ArrayList-- capacity 50%,,based on index, not synchronized,more for search
+    LinkedList--ds linkedlist  nodes, more insertions and deletions in the middle
+    Vector-- capacity doubles, index, synchronized
+Stack--LIFO
+Set-- doesnot allow duplicates, order is not reserved
+    HashSet----- random order---Hashing
+    LisnkedHashSet----insertion order--- LinkedList+Hashing
+     SortedSet-----TreeSet--sorting order--- Red BlackTree
+Queue--FIFO
+	DQueue--- Double ended
+BlockingQueue---enables with producer consumer problem
+
+Map--key value
+   HashMap
+   LinkedHashMap
+    SortedMap----TreeMap
+   Hashtable
+
+
+
+
+

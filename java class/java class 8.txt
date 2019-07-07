@@ -1,0 +1,192 @@
+Recap:
+----------
+IO:
+System.out.print/println/printf
+System.err.
+System.in.read()--byte--
+Scanner --java.util.Scanner
+BufferedReader-- java.io.*;
+
+Two types of streams-- byte stream
+		Charecter Stream
+
+InputStream---read():byte, byte[], int, close()
+OutputStream---write(byte,byte[], int), close(),flush()
+
+FileInputStream fis=new FileInputStream("abx.txt");--- FileNotFoundException
+BufferedInputStream bis=new BufferedInputStream(fis);
+int i;
+while((i=bis.read())!= -1)// IOException
+{
+Syso((char)i);
+}
+bis.close();
+fis.close();
+
+DataInputStream
+DataOutputStream
+SequenceInputStream
+ByteArrayOutputStream
+LineNumberOutputStream
+File f1=new File("employees.txt");
+
+FileOutputStream fos=new FileOutputStream(f1,true);--- FileNotFoundException
+String s="some data";
+fos.write(s.getBytes());--IOException
+fos.flush();
+fos.close();
+
+
+Employee e1=new Employee(12,"Bhuma",564547,21);
+
+class Employee implements Serializable{
+
+transient private int age;
+}
+ObjectInputStream--- readObject():Object
+ObjectOutputStream--writeObject(Object)
+
+oos.writeObject(e1);---NOtSerailizableException
+
+Employee e2=(Employee)ois.readObject();
+-----------------------------------------------------------------Collections-- class
+Collection--interface
+collection is a concept or api
+
+java.util.*;
+
+Iterable
+Collection
+
+List
+Set
+Queue
+
+
+size ---actual objects present list
+capacity---still how many objects can accomdate
+
+ArrayList---50% of the size,non-synchronized,
+		search operations
+Vector---100% of the size, synchronized
+LinkedList---preferred for insertions and deletions in the middle
+
+
+complexity--- best case
+	avearge case
+	worst case
+
+ArrayList l1=new ArrayList();
+
+List l1=new ArrayList();
+l1.add(123);
+l1.add("Str");
+l1.add(67.8f);
+l1.add(67.233);
+l1.add('s');
+
+List<Employee> l1=new ArrayList<>();
+l1.add(new Employee(12,"Sname",3543));0
+l1.add(new Employee(10,"Sname",3543));1
+l1.add(new Employee(13,"Sname",3543));2
+l1.add(new Employee(14,"Sname",3543));3
+l1.add(new Employee(19,"Sname",3543));4
+l1.add(2,new Employee(11,"Sname",3543));
+l1.remove(index);
+
+List<Employee> l2=new ArrayList<>();
+l2.add(new Employee(15,"Sname",3543));
+l2.add(new Employee(17,"Sname",3543));
+l2.addAll(l1);
+l2.removeAll();
+l2.retainAll();
+from java 5 we got generics
+<>
+
+java.lang--- Comparable
+
+Integer implements Comparable--default
+
+java.util---Comparator--filter or sort based on different conditions
+	
+compareTo --int
+
+
+FI-- lamda expressions
+
+
+Comparator<Employee> eCom=new Comparator<Employee>() {
+			@Override
+			public int compare(Employee o1, Employee o2) {
+				// TODO Auto-generated method stub
+				return o1.getAddress().compareTo(o2.getAddress());
+			}
+		};
+
+
+
+in java 8 we have method refrence
+
+::
+
+
+
+Interface1 i1=new Interface1(){
+public void display(){
+System.out.println("print fi");
+}
+};
+Comparator<Employee> c1=
+(Employee e1,Employee e2)->{
+return e1.getEname().compareTo(e2.getEname());
+};
+
+
+Collections.sort(studentlist, Comparator.comparing(Student::getName));
+
+Collections.sort(studentlist,new Comparator(){
+public int compare(Object o1,Object o2){
+Student s1=(Student)o1;
+Student s2=(Student)o2;
+  return s1.getMarks()- s2.getMarks();
+}
+});
+
+Collections.sort(studentlist,(s1,s2)->s1.getMarks()-s2.getMarks());
+
+HashSet--random
+LinkedHashSet---insertion
+TreeSet--sorting
+
+
+TreeMap---null allows only for value
+HashMap-allows null for key and value
+Hastable--doesnot allow null
+
+Interace1 i2=()->{System.out.println("print fi");};
+
+Runnable r1=()->{};
+
+
+
+
+
+
+13    13< 45    1
+45   13> 12 -1
+12
+
+12
+45 45>13 1
+13
+
+
+
+
+
+
+
+
+
+
+

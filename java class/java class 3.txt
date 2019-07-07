@@ -1,0 +1,201 @@
+Recap:
+--------------
+OOP
+     object
+      class
+      constructor
+      Encapsulation
+       polymorphism
+      Inheritence
+      Abstraction
+
+static-- method, variable, block 
+final--variable, class , method
+
+
+ClassName className=new ClassName();
+
+special method which have same name of class--constructor---
+
+bydefualt every class will have default constructor
+Person p3=new Person();
+Person p1=new Person(5456737l,"xyz");
+Person p2=new Person(7456737l,"xyz");
+
+public class Person{
+   private long adarNum;
+  private  String name;
+ private  long mobile;
+public void getPerson(){
+}
+public void getPerson(long adarNum, String pname){
+  this.adarNum=adarNum;
+this.name=pname;
+}
+protected void getDisplay(){
+}
+void getValue(){}
+public methods
+setters or constructors
+getters or only method
+
+member access specifiers:
+private
+protected
+default 
+public
+
+}
+class Parent{
+private int a,b;
+Parent(int a){this.a=a;}
+Parent(int a,int b){this.a=a;this.b=b;}
+public void withdraw(){};
+}
+class Child extends Parent{
+private int b;     
+Child(int m,int b){
+super(m);
+this.b=b;
+}
+public void withdraw(){};
+public static void main(String args[]){
+   Child c1=new Child(12,78);
+    Parent p2= new Child(56,89);
+}
+
+}
+}
+
+-----------------------------------------------------------------Abstraction:  hiding of data
+//abstract method
+abstract public double getValue();//declaring
+//concerete method
+public double getValue(){//deifining  implementing
+ return value;
+}
+
+Class---  can contain only concrete methods--abstract class--not to create the object for the class
+
+abstract class can have constructor
+
+Abstract Class --- can contain concrete and abstract methods
+
+Class --- can contain only abstract methods--interface
+
+Till Java 8:
+--------------
+interface contains only abstract methods and final varaibles by default
+
+If any interface contains only one abstract method will call as SAM(Single Abstract Method)
+
+
+class A
+class B extends A
+
+interface A
+interface B extends A
+
+
+interface A
+class B implements A
+
+is-a:--inheritence is one of the example
+has-a--object with in the other object
+Association--relation between two objects
+Aggregation--without one other can exist
+Composition--without one other cannot exist
+
+String---immutable 
+
+String s1="Shwetha";
+s1=s1+"Mamatha";
+
+String s1="Mphasis";--- SCP(String constant pool)
+String s4="Mphasis";
+String s2=new String("mphasis");--heap
+String s3=new String("Mphasis");
+
+s1==s4   --true
+s2==s3  --- false
+s1==s2 ---false
+s1.equals(s2)---compare the content
+s1.equalsIgnoreCase(s2)
+s1.charAt(3)
+s1.length---1
+index--0
+s1.indexOf('C')
+s1.lastIndexOf();
+s1.codePointAt
+s1.codePointBefore
+s1.codePointAfter
+s1.startsWith
+s1.endsWith
+s1.replace('x','z')
+s1.replaceAll('x','z')
+
+StringBuffer-- java 1
+StringBuilder--java 1.5
+
+String s1=new String("Some text");
+StringBuffer s2=new StringBuffer(s1);
+s2.reverse();
+
+StringBuffer s3=new StringBuffer("Some text");
+
+java.util.Date
+java.sql.Date
+
+Calendar--abstract
+GreoGreanCalendar--implemented class
+SimpleDateFormat
+dd-MM-yy
+dd-MMM-yyyy
+MM/dd/yyyy
+
+
+java 8:
+-------
+java.time.*;
+
+LocalDate
+LocalTime
+LocalDateTime
+Period
+
+
+compareTo---int 
+both strings are equal
+0 
+if first string with upper case and second with lower case
+-ve
+if second string with upper case and first with lower case
++ve values
+Narrowing    Widening
+int a=10;// 4 bytes
+float b=a;//4 bytes
+float c=10.3;
+int m=(int)c;
+
+
+
+int a[]={10,34,23,43,12,43};
+int a[]=new int[3];
+
+int a[][]={{1,2,3},{2,3,4},{5,6,7}};
+
+
+public void add(int a,int b)
+
+public void add(int ... a)
+
+static  public  void  main(String args[])
+  public  static void  main(String args[])
+  public  static void  main(String[] args)
+  public  static void  main(String ... args)
+
+
+
+
+
+
