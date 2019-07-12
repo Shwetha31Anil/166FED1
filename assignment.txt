@@ -1,0 +1,15 @@
+	private int pid;    id between 1 to 16
+	private String name;       only upper case and lowercase letter with lenght 3 to 10
+	private String gender;    only mMfF
+	private long contact;     only 10 digit
+	private String email;     @ is mandatory
+	private String teamname;    only upper case letters with min 1 letter max can be any
+	private int age;    from 16 to 42
+	private Date dob;    should not be null
+	private long score;      
+    getPlayerById(int id)           getPlayerByName(String name)     getPlayerByGender(String gender)
+	getPlayerByContact(long contact)       getPlayerByTeamname(String teamname)
+	 getPlayerByAge(int age)      getPlayerByDob(Date dob) 
+	 getPlayerByScore(int score)          getAllPlayers()
+	 addPlayer(Player p);                 deletePlayer(int id);
+	updateScore(int id, long score);                 getPlayerByEmail(String email);
