@@ -5,10 +5,13 @@ import java.util.Scanner;
 
 import com.mphasis.cart.beans.CartAUser;
 import com.mphasis.cart.beans.Product;
+import com.mphasis.cart.bo.CartAUserBo;
+import com.mphasis.cart.bo.CartAUserBoImpl;
 import com.mphasis.cart.dao.CartAUserDao;
 import com.mphasis.cart.dao.CartAUserDaoImpl;
 import com.mphasis.cart.dao.ProductDao;
 import com.mphasis.cart.dao.ProductdaoImpl;
+import com.mphasis.cart.exceptions.BuissnessException;
 
 public class CartApp {
 
@@ -16,9 +19,11 @@ public class CartApp {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
 		ProductDao pdao=new ProductdaoImpl();
-		CartAUserDao dao=new CartAUserDaoImpl();
+		CartAUserBo dao=new CartAUserBoImpl();
 System.out.println("welcome to CartA");
-System.out.println("1. Register \n 2.Login");
+restart:
+while(true) {
+System.out.println("1. Register \n 2.Login \n 3. close");
 int option=sc.nextInt();
 
 
@@ -37,8 +42,13 @@ if(option==1) {
 	user.setCredit(sc.nextLong());
 	System.out.println("enter gender");
 	user.setGender(sc.next());
+	try {
 	dao.register(user);
-	
+	}catch(BuissnessException b) {
+		System.out.println(b.getMessage());
+		System.out.println("enter the proper details");
+		System.exit(0);
+	}
 	System.out.println("Registered successfully");
 	do {
 	System.out.println("1. Products \n 2. Logout");
@@ -50,7 +60,8 @@ if(option==1) {
 	  }
 	  else if(ch==2) {
 		  System.out.println("Thanks for using");
-		  System.exit(0);
+		 continue restart;
+		  // System.exit(0);
 	  }
 	}while(true);
 }else if(option==2) {
@@ -64,13 +75,13 @@ if(option==1) {
 	  else {
 		  System.out.println("invalid credentials");
 	      System.out.println("login again");
-	      System.exit(0);}
+	      continue restart;}
 	  
   }catch(NullPointerException e) {
   System.out.println("invalid");
   }
   do {
-	   System.out.println("1.Add Product\n2.Update\n3.delete\n4. Retive \n 5. Change password\n 6.By Id \n 7.by name");
+	   System.out.println("1.Add Product\n2.Update\n3.delete\n4. Retive \n 5. Change password\n 6.By Id \n 7.by name 8.Logou\n 9.close");
 	   int ch=sc.nextInt();
 	   switch(ch) {
 	   case 1: System.out.println("enter the Product details");
@@ -102,11 +113,16 @@ if(option==1) {
 		  products.forEach((pr)-> System.out.println(pr));
 		  break;
 	   case 5: System.out.println("enter the old pass and new pass");
-	      int m=dao.changePassword(sc.next(), sc.next());
-	      if(m>0) 
-	      System.out.println("password changed");
-	      else 
-	    	  System.out.println("password not changed");
+	  try {
+	   int m=dao.changePassword(sc.next(), sc.next());
+	   if(m>0) 
+		      System.out.println("password changed");
+	   else 
+		    System.out.println("password not changed");
+	  }catch(BuissnessException b) {
+			System.out.println(b.getMessage());
+		}
+	      
 	      break;
 	   case 6:System.out.println("enter id");
 	   Product pr=pdao.getById(sc.nextInt());
@@ -117,16 +133,21 @@ if(option==1) {
 	   ps.forEach((pl)-> System.out.println(pl));
  		   break;
 	   case 8: System.out.println("Thanks");
+	     continue restart;
+	   case 9:System.out.println("Bye Bye");
 	   System.exit(0);
 	   default: System.out.println("invalid");
 	   }
 	   }while(true);
    }
-
+else if(option ==3) {
+	System.out.println("Bye Bye");
+	System.exit(0);
+}
 else {
 		System.out.println("invalid selection");
 }
 
 	}
-
+	}
 }
