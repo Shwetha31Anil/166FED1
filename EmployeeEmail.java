@@ -1,0 +1,31 @@
+package com.mphasis.training.assignment;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class EmployeeEmail {
+
+ public   Map<String, String> hashMap = new HashMap<String, String>();
+
+    public  void addEmployeeEmailId(String key, String value){
+        if(isValidEmailId(value)) {
+            hashMap.put(key, value);
+        }
+    }
+
+    public String getEmployeeEmailId(String key){
+       return hashMap.get(key);
+    }
+
+    public boolean isValidEmailId(String email){
+        String regex = 
+"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}"
++ "\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher m = pattern.matcher(email);
+        return m.matches();
+    }
+
+}
