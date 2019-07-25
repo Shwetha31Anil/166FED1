@@ -1,0 +1,219 @@
+Recap: Hibernate 4.3.10
+-------------------------------------------------
+ORM tools--- Object relational Mapping
+Mapping between object and relation
+Object ---class, inheritence or composition
+
+to interact with java and db is JDBC
+ORM--- Ibatis, Hibernate, eclipselink, toplink
+Framework:  Hibernate  4.3.10 5
+Pattern:
+
+Hibernate:
+-------------------
+dependencies---jar file /liberaries
+configuration---- cfg.xml or java class
+mapping----- hbm.xml or annotation
+annotation----- @Entity,  @Id, @column(length=45, nullable)
+						 @Table,   @OneToOne, @OneToMany,@ManyToOne,
+						 @ManyToMany, @Embedable, @Inheritence
+						 @DescrimatorValue
+						 
+	Inheritence----> stratagies------> Table_Per_Class, Single_Table, Joined
+
+Configuration:
+--------------------
+<hibernate-configuration>
+	<session-factory>
+	<property-------------------> driverClass, url,user,password,dialect
+												 hbm2ddl.auto---> create,update,create-drop
+												 show_sql---true/false
+												 use-second_level_cache
+												 cache-factory-region class
+												 
+						hbm.xml						 
+	</session-factory>
+</hibernate-configuration>	
+
+Dao:
+----------
+cfg.xml      hbm.xml
+Configutaion con=new Configuration().configure();
+
+cfg.xml       with mapping in annotation
+Configutaion con=new Configuration().configure().addAnnotatedClasses();
+
+cfg in java class----HibernateUtil
+public static SessionFactory getSessionFactory(){
+Configutaion con=new Configuration();
+props will set
+SessionFactory sessionFactory=con.buildSessionFactory(sesriveRegistry);
+return sessionFactory;
+}
+Dao
+SessionFactory sessionFactory=HibernateUtil.getSessionFactory();
+
+Session session=sessionFactory.openSession();
+
+Session session=HibernateUtil.getSessionFactory().openSession();
+
+DML operations
+		insert------ session.save(object) or session.persist(object)
+		update------ session.update(object) or session.saveOrUpdate(object)
+		delete-------session.delete(object);
+
+DDL--- select where with 
+			get(entity.class,12);
+			get(entity.class, new Integer(12));
+			load()
+			
+	select--- where --and or between like gt lt 
+	--------------------------------------------------
+		1) Criteria interface
+		2) Query interface
+		3) SqlQuery interface
+		
+		Criteria  cr=session.createCriteria(Class.class);
+		cr.add(Restriction.gt("age",34));	
+		cr.list();
+		cr.add(Restriction.between("age",19,55));	
+		HQL
+		Query q1=session.createQuery("from Entityname where age>21");
+		
+		SQLQuery q2=session.createSQLQuery();
+		
+		
+		@Entity(name="ss")---createQuery
+		@Table(name="ss1")---createSQLQuery
+		class Employee{--- createCriteria
+		}
+		
+Cacahing--- 1st level--default-- with in a session
+				---- 2nd level  --configure--- across sessions
+				lib--- ehcache
+					---config file
+					---- in entity classess-- @Cacheable
+														@Cache()
+													stratagy-READ-ONLY
+																-READ-WRITE
+																-TRANSACTION
+ state life cycle---->
+	Persistent--->attached to db--- save, persist,
+	Detached---->detach();
+	Transient--- @Transient-- this will not create in table
+	Removed---->remove();
+-------------------------------------------------------------------------------------------
+Spring Framework---- IOC-- Inversion of Control--principle
+---DI(Dependency Injection) pattern
+
+Dependent class
+class Car{
+	int carid;
+	Tyre tyre=new Tyre();
+	Engine engine=new PetrolEngine();
+}
+
+
+class Car{
+	int carid;
+	Tyre tyre;
+	Engine engine;
+	-- will ask spring container to create a objects 
+}
+
+Spring Framework:
+--------------------------
+Modules:
+  Core : Core	-- fundamentals---- DI
+			  Bean  --- BeanFactory
+			 Context--- medium to access any objects
+			 SpEL---- provides a Expression langauge
+			 
+	Dao--Data Access---- Spring JDBC------ DAO, DTO
+										Spring Hibernate
+										Spring JPA
+	AOP-- Aspect Oriented Programming: helper guy for OOP
+    Web---  Spring MVC---------------------MVC
+				Spring REST MVC with Hibernate--- Project RLL
+	Misc--- Spring Security
+	----------------------------
+	Spring Boot-- Deployment
+-----------------------------------------------------------------------------------------
+Spring Core:
+--------------				
+	DI---Dependency Injection
+		setters-------------------SI
+		constructors-----------------CI
+		
+Spring containers:-----------    BeanFactory------ lazy
+												ApplicationContext----- eager
+
+Spring ------   xml---- application.xml	
+					   annotation---- @Component
+					   
+					 pojos---- @Component
+				daos-----@Respository
+					bos/servic----@Service
+					request/response-----@Controller
+	
+xml based configuration-------- application.xml
+mixed way configuration--------- application.xml     + annotation
+java based configuration----------Java class
+
+Spring 4 libs:   download all jar file 
+						maven project-- quick start
+												-- spring 
+						STS---Spring too suite---Spring Legacy project
+
+						
+	<bean id="" name="">
+	<property name="tyre" ref>
+		<list>
+		</list>
+	</property>
+	</bean>
+
+		public Car getCar(){
+		return new Car();
+		}
+ 
+ 
+ scope:   singleton--- default
+			prototype
+			request
+			session
+			globalsession
+			
+		@Scope
+
+Life cycle of Bean:
+			1. InitializingBean,DisposableBean interface
+			2. init-method="after" destroy-method="des"
+			3. default-destroy-method="des" default-init-method="after"
+			4. @PreConstruct    @PostDestroy
+			
+To make lazy:
+				lazy-init="default"
+				
+@Required
+<bean 
+class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />		
+	
+
+@Bean 
+public 	 RequiredAnnotationBeanPostProcessor getPostProcessor(){
+return new RequiredAnnotationBeanPostProcessor();
+}
+
+
+Question
+	qid
+	question
+	List<Answer> answers;	
+Answer	
+		aid
+		ans
+		Set<Users>   users
+User
+			uid
+			uname
