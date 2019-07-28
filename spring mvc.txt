@@ -1,0 +1,26 @@
+Spring Web---Spring MVC:
+------------------------------------
+
+1. jar file----spring-webmvc
+2. In web.xml----> configure front controller
+					DispatcherServlet
+3. 	name0fthedispactherservlet-servlet.xml----- spring beans configuration	
+				beans
+				context
+				mvc
+				<mvc:annotation-driven/>
+				configure the bean for ViewResolver
+				InternalResourceViewResolver----- suffix and prefix 
+4.  class annotated with @Controller		
+			for any methods---->   @RequestMapping("/action")
+						auto, only uppercase, email, 8 length min of 1 upper 1lower 1num,
+Customer---- custid, custname,cemail , cpass, 
+				reg_date(current date), 
+				phonenum(10 numbers)
+with dao(hibernate), bo
+Login from jsp to db 
+Signup
+-----------------------
+						
+				
+				

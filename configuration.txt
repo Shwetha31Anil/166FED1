@@ -1,0 +1,79 @@
+1. Configuration------ hibernate.cfg.xml--- load mapping file
+2. Mapping--------------- entityname.hbm.xml
+
+1.Configuration------ hibernate.cfg.xml
+2. annotations----for mapping
+
+addAnnotatedClasses()
+
+1. Configuration----java based
+2. Mapping-----java based(annotation)
+
+
+Configuration.xml:															java
+   hiberante-configuration									Configuration
+				session-factory
+					properties
+
+
+	Configuration con=new Configuration();
+	Properties props=new Properties();
+	props.put(Environment.DRIVER,"");
+	props.put(Environment.URL,"");
+	props.put(Environment.USER,"");
+	props.put(Environment.PASS,"");
+	props.put(Environment.DIALECT,"");
+	props.put(Environment.HBM2DDL_AUTO,"");
+	props.put(Environment.SHOW_SQL,"");
+	
+	con.setProperties(props);
+	con.addAnnotatedClasses(Employee.class);
+	
+	SessionFactory sFactory=con.buildSessionFactory();
+	return sFactory;
+--------------------------------------------------------------------------------------------------------
+Realtions:   onetoone----------Employee   Department
+onetomany
+manytoone
+manytoone
+
+select department0_.deptid as deptid1_1_0_, department0_.dname 
+as dname2_1_0_ from 
+mphdepartment department0_ where department0_.deptid=?
+
+
+select department0_.deptid as deptid1_1_0_, department0_.dname as 
+dname2_1_0_, employees1_.department_deptid as departme4_1_1_, 
+employees1_.empid as empid1_0_1_, employees1_.empid 
+as empid1_0_2_, employees1_.department_deptid 
+as departme4_0_2_, employees1_.empName as empName2_0_2_, 
+employees1_.salary as salary3_0_2_ from mphdepartment department0_, 
+MphEmployee employees1_ where 
+department0_.deptid=employees1_.department_deptid(+) 
+and department0_.deptid=?
+
+Application of type Zomato
+Application of type Book My Show
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

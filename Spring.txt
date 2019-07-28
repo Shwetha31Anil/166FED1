@@ -1,0 +1,115 @@
+Recap:
+-----------
+Spring:  Core :   xml
+							mixed
+							java
+							
+	Container:   BeanFactory
+	ApplicationContext---------ClassPathXMLApplicationContext("xml");
+								AnnotataionConfigApplicationContext(AppConfig.class);
+	classes----> bean
+		<beans    default-init-method="" default--destroy-method="">
+			<bean id="" class="" scope=""   init-method=""    destroy-method=""
+			lazy-init="">
+			singleton---object
+			prototype-----new object
+			request---for each request
+			session----for entire one session
+			globalsession----for within one and inner session also
+			setter method--><property    variable--- name and value
+															object ----name and ref
+															list-objects----<list> <ref bean=""/>
+															</list>
+			constructor-----> constructor-arg
+			
+			Mixed:   context---- component-scan---scan the componenets
+			
+			Java:   create any class--->@Configuration
+			
+			@Bean
+			public Employee getEmployee(){
+			Employee e1=new Employee();
+			e1.setEid(56);
+			return e1;
+			}
+			
+			in the Employee class will use---@Component
+																	@Scope
+																	@Lazy
+																	@PreConstruct
+																	@PostDestroy
+																	@Required
+ life cycle:  interfaces---- InitializingBean, DisposableBean
+BeanPostProcessor 
+			
+-----------------------------------------------------------------------------------------
+Spring Dao---Data Access Object
+					Spring JDBC----JdbcTemplate
+					Spring ORM--- SpringHibernate
+												Spring JPA
+										
+Hibernate:  Pojo---- @Entity, @Id
+
+Configuration----SessionFactory
+	driver,url,user,password,dialect
+										
+SpringHibernate---- 	DriverManagerDataSource--- driver,url,user,pssword	
+									LocalSessionFactory--- we can set hibernateproperties
+
+		DaoImpl---- 
+		@Repository
+		class EmployeeDaoImpl{
+			@Autowired
+			SessionFactory sessionFactory;
+		}
+		
+libraries:     spring-context
+					spring-jdbc
+					spring-orm
+					hibernate
+					spring-tx
+					ojdbc6.jar
+----------------------------------------------------------------------------------------
+Spring AOP: Aspect Oriented Programming
+					OOP
+	Aspect		: logging aspect, transaction aspect
+	JoinPoint:    for which method aspect should execute 
+	Advice: when for that method	
+				before
+				after
+				afterReturning
+				afterThrowing
+				around
+	PointCut:-- match the JoinPoint	
+					--- expressions
+			@Before("execution(* com.mphasis.training.daos.*.*(..)")
+	Weaving: Process of aspecting		
+	
+	
+	@Aspect---- aspect class
+	
+	@EnableAspectJAutoProxy---configuration class
+					
+Transaction Management:
+------------------------------------
+
+@EnableTransactionManagement----config file
+
+HibernateTransactionManager--- sessionFactory---Bean
+
+All daos/services--- @Transactional
+Session session= sessionFactory.getCurrentSession();
+session.save(object);
+
+Session session= sessionFactory.getCurrentSession();
+session.update(object);
+-------------------------------------------------------
+Suppliers
+Products
+
+					
+
+
+
+
+			

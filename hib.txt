@@ -1,0 +1,23 @@
+first level cache
+-----------------------
+default in hibernate
+with in session
+
+
+Second level cache : accross multiple sessions
+------------------------
+hibernate-ehcache --dependency
+
+config file--- use_second_level_cache
+					 CACHE_REGION_FACTORY
+					 
+					 xml:	
+					 <property name="hibernate.cache.use_second_level_cache">
+	true</property>
+	<property name="hibernate.cache.region.factory_class">
+	org.hibernate.cache.ehcache.EhCacheRegionFactory
+	</property>
+					 
+					 
+entity--- @Cacheable
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
