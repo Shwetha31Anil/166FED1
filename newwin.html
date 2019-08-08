@@ -1,0 +1,26 @@
+<html>
+<head>
+     <title>new window </title>
+	 <style>
+	 
+	 </style>
+	 <script>
+                      var anotherWindow=null;
+                      function createWindow()
+					  {
+                          
+						   anotherWindow = window.open("","","toolbar=no","status=no","width=200","height=200");
+                            if(anotherWindow != null)
+                            {
+                               var newContent ="<html><head><title>new window </title></head><body><table border='1'><tr><th>s00s0s</th><td>dyshfg</td></tr></table></body></html>";	
+                                anotherWindow.document.write(newContent);
+                            }
+						}	
+ 	 </script>
+</head>
+<body>
+     <p id="p1" value="new Window" onclick="createWindow()">click here to open new window</p>
+	 <br/><br/>
+	 <p id="p1" value="close Window" onclick="anotherWindow.close()">click here to close window</p>
+</body>
+</html>	 

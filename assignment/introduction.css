@@ -1,0 +1,35 @@
+h1
+
+{
+
+
+text-indicate: 20px;
+
+font-family: calibri;
+
+font-size: 30px;
+
+font-style: normal;
+
+font-weight: bold;
+
+color: grey;
+
+text-decoration: underline;
+
+text-align: center;
+text-shadow : 30px 20px deepskyblue ;
+
+}
+
+p
+
+{
+	text-transform: capitalize;
+
+font-family: verdana;
+
+font-size: 20px;
+
+font-style: italic;
+}

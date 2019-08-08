@@ -1,0 +1,85 @@
+<html>
+     <head>
+          <title> Forms</title>
+		  <link href="sam2.css" rel="stylesheet" type="text/css">
+		  <script>
+		              var i=0,j=0;
+				       ]
+					  function validate()
+				{
+					     				 
+		             function validun()
+					{
+		                  var uname=document.getElementById("un");
+                          if(uname.value.trim() == "")
+					    {
+					            uname.style.border="solid 3px red";
+						        document.getElementById("al").style.visibility="visible";
+						}
+					      else if(uname.value.trim() != "")
+					    {
+					            uname.style.border="solid 3px blue";
+						        document.getElementById("al").style.visibility="hidden";
+						   
+					    }
+					      else
+					       i=1;
+					 
+					}
+					 function validpw()
+					{
+					      var pwd=document.getElementById("pwd");
+					      if(pwd.value.trim() == "")
+					    {
+					           pwd.style.border="solid 3px red";
+					           document.getElementById("a2").style.visibility="visible";
+					   
+					    }
+					       else if(pwd.value.trim().length <5) 
+					    {
+					           pwd.style.border="solid 3px red";
+					           document.getElementById("a2").style.visibility="visible";
+					 
+					    }
+					      else
+					    {
+					           pwd.style.border="solid 3px blue";
+					           document.getElementById("a2").style.visibility="hidden";
+						       j=1;
+					    }
+					}
+					if(i == 1 && j == 1)
+					   return true;
+					else
+                       return false;					
+		        }
+		</script>
+     </head>
+     <body>
+           <fieldset>
+           <legend align="center">Login</legend>
+           <form name="login" onsubmit="return validate()" method="get" action="f1.html" align="left" autocomplete="off" width="50%" >
+           <label>Login Page</label>
+            <br/>
+            <br/>
+           <input type="text" placeholder="username" id="un" onchange="validun()" >
+           
+		   <p id="al"style="color:blue;visibility:hidden"> username required</p>
+           
+           <input type="password" placeholder="********" id="pwd" onkeyup="validpw()">
+		   <p id="a2"style="color:blue;visibility:hidden">must be greaterthan 8</p>
+           
+           
+           <input type="submit"/>&nbsp&nbsp<input type="reset" float="right"/> 
+          </form>
+          </filedset>
+          <hr/>
+          <ol type="I">
+                      <li><a href="f1.html">html contents</a><br/>
+                      <li><a href="f2.html">image demo</a>
+                      <li><a href="f3.html">List & Table</a><br/>
+                      <li><a href="f5.html">sign up</a><br/>
+
+           </ol> 
+     </body>
+</html>

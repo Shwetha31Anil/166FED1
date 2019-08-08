@@ -1,0 +1,99 @@
+<html>
+     <head>
+          <title> Forms</title>
+          
+          
+                  <link href="sam2.css" rel="stylesheet" type="text/css">
+          
+		  <script>
+		                         
+		  </script>
+          <script>
+		          
+                  //document.write("welcome"+" sriram");
+                  //alert("fill the box");
+                  //prompt("enter id","");
+                  //confirm("are u sure");
+          </script>       
+     </head>
+     <body>
+           <fieldset>
+           <legend align="center">Sign up</legend>
+           <form name="Register" method="post" action="f1.html" align="center" autocomplete="on" width="50%" >
+           <label>Registration Page</label>
+            <br/>
+            <br/>
+           <input id="uname"type="text" placeholder="username" required >
+             
+           <br/>
+           <br/>
+           <input id="pwd" type="password" placeholder="password">
+           <br/>
+           <br/>
+           <input id="cpwd" type="password" placeholder="conform password" onchange="checkpwd()">
+           <br/>
+		   <p id="notm"></p>
+		   <script>
+		               function checkpwd(){
+					                       var p1=document.getElementById("pwd").value;
+										   var p2=document.getElementById("cpwd").value;
+										   if ( p1 === p2)
+										   document.getElementById("notm").insertAdjacentHTML('checked','correct');
+										   else
+										   document.getElementById("notm").insertAdjacentHTML('checked','correct');
+										  }
+										   
+		              
+		   </script>
+           <br/>
+           <input id="emil" type="email" placeholder="abfgr@dfg.com" required >
+           <br/>
+           <br/>
+           <input type="date"name="dob" required>
+           <br/>
+           <br/>
+           <input type="radio" name="gender" value="M"> Male &nbsp <input type="radio" name="gender" value="F"> Female
+           <br/>
+           <br/>
+           <input type="number" placeholder="phone no" required>
+           <br/>
+           <br/>
+           <input type="checkbox" name="Language" value="Ka"> Kannnada &nbsp<br/><br/> 
+           <input type="checkbox" name="Language" value="Te"> Telugu &nbsp <br/><br/>
+           <input type="checkbox" name="Language" value="Hi"> Hindi &nbsp <br/><br/>
+           <input type="checkbox" name="Language" value="E" checked> English &nbsp            
+           <br/>
+           <br/>
+           <textarea name="address" placeholder="address"></textarea>
+           <br/>
+           <br/>
+           <select name="state">
+           <option>-----States-----</option>
+           <option>Andhra Pradesh</option>
+           <option>Tamilnadu</option>
+           <option>Madya pradesh</option>
+           </select>  
+           <br/>
+           <br/>
+            <select name="city">
+           <option>------city------</option>
+           <option>guntur</option>
+           <option>chenai</option>
+           <option>bhopal</option>
+           </select>  
+           <br/>
+           <br/>     
+           <input type="submit" id="subit"onclick=""/>&nbsp&nbsp<input type="reset"/> 
+           </filedset>
+          </form>
+          
+          <hr/>
+          <ol type="I">
+                      <li><a href="f1.html">html contents</a><br/>
+                      <li><a href="f2.html">image demo</a>
+                      <li><a href="f3.html">List & Table</a><br/>
+                      <li><a href="f4.html">sign in</a><br/>
+
+           </ol> 
+     </body>
+</html>

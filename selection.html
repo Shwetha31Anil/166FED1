@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>
+</title>
+                <script>
+				    
+                    var myData = new Array();
+                    myData[1]='56000';
+                    myData[2]='30000';
+                    myData[3]='27500';	
+                   				
+                </script>
+</head>
+<body>
+       <form id="ite" name="ite">
+	        <select id="selector" name="selector">
+			   <option value=""selected></option>
+               <option value=1>Television</option>
+               <option value=2>Laptop</option>
+               <option value=3>Phone</option>
+		    </select>
+           <br/>
+		   <input type="text" value="" id="populateditems"name="populateditems">
+		</form>   
+		<script>
+		         //var obj = document.getElementById("selector").value;
+				 //document.getElementById("populateditems").innerHTML = myData[obj.value];
+		        document.ite.selector.onchange=updateText;
+				 function updateText()
+				{
+				 var obj = document.ite.selector;
+				 document.ite.populateditems.value = myData[obj.value];
+				} 	
+				
+		</script> <hr/>
+        <script>
+		        var ar1 = new Array(1,45,67,899,463);
+                var arr= new Array("abc","qwe","tyu","gfh","fgs","mnv");
+                document.write(arr.length+"<br><br>");
+                var arrj = arr.join("-");
+                document.write("Join Data : "+arrj+"<br><br>");
+                var arrs = arr.slice(0,3);
+                document.write("slice Data : "+arrs+"<br><br>");
+		        var arrc = arr.concat(arrs);
+				document.write("Concat : "+arrc+"<br><br>");
+				var arrr = arr.reverse();
+				document.write("reversed :"+arrr+"<br><br>");
+				var arrso= arr.sort();
+				var ar1= ar1.sort();
+				document.write("sorted : "+arrso+"<br><br>");
+		        document.write("sorted : "+ar1+"<br><br>");
+		</script>
+                 				
+</body>
+</html>

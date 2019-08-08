@@ -1,0 +1,65 @@
+package com.mphasis.training;
+
+25%{
+            transform: rotate(-1deg);
+           }
+           50%{
+            transform: rotate(1deg);
+           }
+           75%{
+            transform: rotate(-1deg);
+           } 
+           100%{
+            transform: rotate(1deg);
+           } 
+
+--------------------------------
+10%{
+            transform: rotate(10deg);
+           }
+           14%{
+            transform: rotate(15deg);
+           }
+           18%{
+            transform: rotate(10deg);
+           }
+           22%{
+            transform: rotate(21deg);
+           }
+           26%{
+            transform: rotate(18deg);
+           }
+           30%{
+            transform: rotate(25deg);
+           }
+           34%{
+            transform: rotate(30deg);
+           }
+           40%{
+            transform: rotate(35deg);
+           }
+           50%{
+            transform: rotate(60deg);
+           }
+           55%{
+            transform: rotate(90deg);
+           }
+           60%{
+            transform: rotate(135deg);
+           }
+           70%{
+            transform: rotate(270deg);
+           }
+           100%{
+            transform: rotate(360deg);
+           }
+		   -------------------------------------------------------------------------
+		   tr:hover
+           {
+               filter: brightness(90%);
+               filter: hue-rotate(-0.25turn);
+		   }
+		   tr:hover
+		   {
+			   color:rgb(211, 236, 222);
+		   }

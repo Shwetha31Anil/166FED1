@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<h1 style="text-align: center;color:white">Product Details</h1>
+
+	<style>
+	table{
+		    background-color:deepskyblue;
+		    border:10px solid white;
+			
+
+	}
+	
+			body{
+				background-color: deepskyblue;
+			}
+</style>
+</head>
+ 
+<body> 
+	 <center>
+	<form id="from1">
+		<table>
+	  <tr>
+	     <td>Category:</td>
+	     <td><select onchange="Myfun()" id="select1">
+	          <option name="select" >--------</option>
+	          <option name="Electronics" id='Electronics'>Electronics</option>
+	          <option name="Grocery"  id='Grocery'>Grocery</option>
+	      </select>
+        </td>
+    </tr>
+
+        <tr>
+        	<td>Product:</td>
+        	<td> <select id="pick1" onchange="myfun2()">
+					<option name="select" >--------</option>
+        	    </select>
+        </td>
+    </tr>
+
+    <tr>
+    	<td>Quantity</td>
+    	<td><input type="number" id="text1" onkeyup="calcprice()" ></td>
+    </tr>
+
+    <tr>
+    	 <td>Total price</td>
+    	 <td><input type="number" id="text2"  readonly></td>
+    </tr>
+    <tr>
+		<td><input type="button" value="submit" onclick="myfun3()"></td></tr>
+    
+
+	</table>
+</form>
+</center>
+<script type="text/javascript">
+  
+	function Myfun() {
+	              
+		         var x=document.getElementById("select1").value;
+		         if(x =="Electronics")
+		         {
+		         	 var items=["","Mobile","Laptop","Telivision"];
+
+		         }
+		         else if(x =="Grocery")
+		         {
+		         	 var items=["","Soap","Powder"];
+		         }
+		         else
+		         { }
+		         var str="";
+		         for(var item of items)
+		         {
+		         	 str=str+"<option>"+item+"</option>"
+		         }
+				 
+		         document.getElementById('pick1').innerHTML=str;
+		         document.getElementById("select1").addEventListener("onchange", Myfun);
+	}
+	     function myfun2()
+		 {
+              
+		 var y=document.getElementById("pick1").value;
+				 if(y=="Telivision")
+        	 {
+				document.getElementById('text2').value=20000;
+        	 }
+        	 else if(y=="Laptop")
+        	 {
+				document.getElementById('text2').value=30000;
+        	 }	
+        	 else if(y=="Mobile")
+        	 {
+				document.getElementById('text2').value=10000;
+        	 }
+        	 else if(y=="Soap")
+        	 {
+				document.getElementById('text2').value=40;
+        	 }
+        	 else if(y=="Powder")
+        	 {
+				document.getElementById('text2').value=90;
+        	 }
+        	 else
+        	 {
+
+        	 }
+			 document.getElementById("pick1").addEventListener("onchange", Myfun2);
+	}
+  function calcprice()
+        {
+          
+		var y=document.getElementById("pick1").value;
+        	 var en=parseInt(document.getElementById("text1").value);
+        	 if(y=="Telivision")
+        	 {
+        	 	 var price=20000;
+        	 	 en=price*en;
+        	 }
+        	 else if(y=="Laptop")
+        	 {
+        	 	var price=30000;
+        	 	en=price*en;
+        	 }	
+        	 else if(y=="Mobile")
+        	 {
+        	 	var price=10000;
+        	 	en=price*en;
+        	 }
+        	 else if(y=="Soap")
+        	 {
+        	 	var price=40;
+        	 	en=price*en;
+        	 }
+        	 else if(y=="Powder")
+        	 {
+        	 	var price=90;
+        	 	en=price*en;
+        	 }
+        	 else
+        	 {
+
+        	 }
+        	 document.getElementById('text2').value=en;
+        	 document.getElementById('pick1').addEventListener("onkeyup",calcprice);
+
+
+        }
+  function myfun3()
+  {
+     
+	 
+    var i5 = document.getElementById("select1").value;
+	var i2 = document.getElementById("pick1").value;
+	var i3 = document.getElementById("text1").value;
+	var i4 = document.getElementById("text2").value;
+	 
+	var another = window.open("","","width=500","height=500","left=200","top=100");
+	another.document.write("<center><table border='1'><tr><td>Category:</td><td>"+i5+"</td></tr><tr><td>Products</td><td>"+i2+"</td></tr><tr><td>Quality</td><td>"+i3+"</td></tr><tr><td>Total</td><td>"+i4+"</td></tr></table></center>");
+
+  
+ 
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

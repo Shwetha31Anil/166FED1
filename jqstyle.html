@@ -1,0 +1,82 @@
+<html>
+<head>
+	   <link href="js/jquery-ui.css" rel="stylesheet">
+	   <link href="js/jquery-ui.theme.css" rel="stylesheet">
+	   <link href="js/jquery-ui.structure.css" rel="stylesheet">
+	   <title>Jquery UI || Date Picker</title>
+	    <script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	    <style>
+		   .mydivs{
+		            border:5px solid green;
+					margin:10px;
+					padding:20px;
+					}
+					
+       </style>		
+</head>
+<body>
+      <!-- text() html() attr() css() append() after() prepend() before() remove() empty() addclass() removeClass() toggleclass()
+	   datepicker tootip progressbar accordian,tabs -->
+  <h1>Jquery Accordion</h1>
+      <div id="panels">
+                      <h3>HTML</h3>
+                              <div>Html is a language is used for web development.Html 4 is static web pages.</div>	
+                      <h3>css</h3>
+					            <p>CSS is Cascading Style Sheet used for styling of web pages and to do aniamtions.
+					            CSS is Cascading Style Sheet used for styling of web pages and to do aniamtions.</p>
+					   <h3>JS</h3>
+                               <p> JS is java script used for event handling and to do validation.
+					            JS is JavaScript used for event handling and to do validation.</p>
+					   
+	  </div>  
+<br><hr/>
+<div class="mydivs">
+<h1> Jquery Sample Customized</h1>	  
+	  <button id="btn1">Click me</button></div>
+	  <div id="msgbox" title="MessageBox" class="mydivs1" style="display:none" >
+	   <p>Are U Okay?</p>
+	       <!--<h2>It's alert box</h2>
+	       <br/>
+		   <button id="#hd">Ok</button> -->
+	  </div>	   
+<script>
+                  //$("#msgbox").hide();
+				  $("#panels").accordion({
+				   collapsible:true,
+				   event:'click',
+				   animate:900,
+				   active:false,
+				   heightStyle:true,
+				   icons:{header : "ui-icon-locked",activeHeader:"ui-icon-minus"}				  
+				   });
+				   $("#btn1").click(function(){
+				     //$("#msgbox").show();
+					 $("#msgbox").dialog({
+					     title:"Custom Box",
+						 draggable:true,
+						 resizeable:true,
+						 buttons:[{
+						           text:"close",
+							       icon:"ui-icon-heart",
+							       click:function(){
+							                        $(this).dialog("close");
+                                                    }
+								  },
+							      {
+							        text:"OK",
+							        icon:"ui-icon-heart",
+							        click:function(){
+							                          $(this).dialog("close");
+							                         }
+							      }
+								]
+					 });
+				   
+				   });
+				   
+</script>	  
+       					  
+	 	 
+</body> 
+ </html>

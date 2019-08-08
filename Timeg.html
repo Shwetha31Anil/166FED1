@@ -1,0 +1,77 @@
+<html>
+      <head>
+	        <title>time game</title>
+			<link href="sam2.css" rel="stylesheet" type="text/css">
+			<script>
+			            var r=0;
+						var id=0;
+						var opacity=0;
+						
+						function printing()
+						{
+						  document.getElementById("t1").innerHTML="5 seconds";
+						}
+						function start1()
+                        {
+                          r=window.setTimeInterval(printing,1000);
+                        }
+                        function start()
+                        {
+                          r=window.setTimeout(printing,5000);
+                        }	
+                       function stop()
+                        {
+                            window.clearTimeout(id);
+                        }
+                        function fadeout()
+						{
+						  id=window.setInterval(hide,1000);
+						} 
+						function fadein()
+						{
+						  id=window.setInterval(show,1000);
+						}
+                        function show()
+                        {
+                          img=document.getElementById("1");
+                          opacity=window.getComputedStyle(img).getPropertyValue("opacity");
+						  var sum=0;
+                          if(opacity < 1)
+                          {
+                            sum = opacity + 0.1;
+                            opacity = sum + 0.1;							
+							img.style.opacity=opacity;
+						  }
+                          else
+                          {
+                            clearInterval(id);
+                           }
+                        }						   
+            							
+						function hide()
+                        {
+						  
+                          img=document.getElementById("1");
+                          opacity=window.getComputedStyle(img).getPropertyValue("opacity");
+						  
+                          if(opacity > 0)
+                          {
+                            opacity = opacity - 0.1;	
+							img.style.opacity=opacity;
+						  }
+                          else
+                          {
+                            clearInterval(id);
+                          }
+                        }
+						  
+						
+			</script>
+	  </head>
+	  <body>
+	        <button onclick="fadeout()" id="btn1">   in   </button><button onclick="fadein()" id="btn2">   out    </button>
+			<h2 id="t1" onmouseenter="start()">SomeText</h2>
+			<img src="Desert.jpg"width="20%" height="25%"id="1">
+			
+	  </body>
+</html>

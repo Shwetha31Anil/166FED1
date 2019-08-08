@@ -1,0 +1,20 @@
+.para{
+                  color:#01073a;
+        font-family: cursive;
+        margin-top:50px;
+        margin-left:70px;
+       // border-image:url("Desert.jpg") 10 round;
+        border-right:5px dashed deepskyblue;
+        border-left:5px dotted deepskyblue;
+        border-bottom:50px line   deepskyblue;
+        border-top:5px solid  deepskyblue;
+        border-left-radius:20px;
+      }                
+
+            body{
+                  background-image:url("Desert.jpg");
+                  background-repeat:no-repeat;
+                  background-size:100%;
+                  background-attachement:fixed;
+                   
+                }

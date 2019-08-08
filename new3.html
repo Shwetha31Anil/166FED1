@@ -1,0 +1,511 @@
+<html><head>
+<style>
+#canvas
+{
+  width: 600px;
+  height: 400px;
+  border: 1px solid black;
+  position:relative;
+  top:50px;
+
+  
+}
+body{
+
+      
+
+    height: 100%;
+
+    animation:  mycolor 1000s infinite;
+
+  }
+
+  @keyframes mycolor
+
+  {
+
+        0%
+
+       {
+
+           background-color: aliceblue;
+
+       }
+
+       10%
+
+       {
+
+             background-color: rgb(132, 196, 196);
+
+        }
+
+        20%
+
+        {
+
+            background-color: #8a8299;
+
+        }
+
+        30%
+
+        {
+
+            background-color: cornflowerblue;
+
+        }
+
+        40%
+
+        {
+
+            background-color: #e66699;
+
+        }
+
+        50%
+
+        {
+
+            background-color: rgb(99, 70, 153);
+
+        }
+
+        60%
+
+        {
+
+            background-color: rgb(196, 247, 149);
+
+        }
+
+        70%
+
+        {
+
+            background-color: rgb(241, 210, 124);
+
+        }
+
+        80%
+
+        {
+
+            background-color: rgb(100, 237, 134);
+
+        }
+
+        90%
+
+        {
+
+            background-color: rgb(143, 199, 221);
+
+        }
+
+        
+
+  }
+.rotate1
+{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top:80px;
+  border: 3px dotted red;
+  float:left;
+  animation: example1 5s infinite alternate;
+}
+.rotate2
+{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top:90px;
+  border: 3px dotted red;
+  float:right;
+  animation: example2 5s infinite alternate;
+}
+.rotate3
+{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top:85px;
+  border: 3px dotted red;
+  float:left;
+  animation: example 5s infinite alternate;
+}
+.rotate4
+{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top:90px;
+  border: 3px dotted red;
+  float:right;
+  animation: example2 5s infinite alternate;
+}
+.rotate5
+{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top:85px;
+  border: 3px dotted red;
+  float:left;
+  animation: example 5s infinite alternate;
+}
+@keyframes example {
+    0% { border: 3px dotted red; left:0px;transform:rotate(300deg)}
+	20%{opacity:0.5;}
+   50% { border: 3px solid  blue; left:500px; transform:rotate(3600deg)}
+   75% { border: 3px dotted blue; left:200px; transform:rotate(2400deg);margin-left:150px;}
+  100% { border-color: red; left:0px;transform:rotate(1800deg);border: 3px groove blue;}
+}
+@keyframes example1
+{
+    0% { border: 3px dotted red; left:0px;transform:rotate(300deg)}
+	20%{opacity:0.5; left:500px; transform:rotate(3600deg)}
+   75% { border: 3px solid  blue; left:1000px;top:-300px;}
+   50% { border: 3px dotted blue; left:1000px; transform:rotate(2400deg);margin-left:150px;}
+   80% {left:1100px; transform:rotate(2400deg);margin-left:150px;}
+  100% { border-color: red; left:0px;transform:rotate(1800deg);border: 3px groove blue;}
+}
+@keyframes example2 {
+   0%  { border: 3px dotted red; right:0px;transform:rotate(300deg)}
+   30%  {opacity:0.5;}
+   35%{animation-delay:2s;}
+   50% { border: 3px solid  blue; right:1070px; transform:rotate(3600deg);margin-left:150px;}
+   75% { border: 3px dotted blue; right:200px; transform:rotate(360deg)}
+  100% { border-color: red;  right:0px;transform:rotate(1800deg);border:3px groove blue;}
+}
+/* .typewriter {
+    font-family: Courier, monospace;
+	display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 2s steps(7);
+    white-space: nowrap;
+    
+    
+    box-sizing: border-box;
+	 
+}
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 100% ;
+	    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+       }
+@keyframes blink {
+    from{ 
+        border-color: transparent 
+    }
+    50%{ 
+        border-color: orange; 
+    }
+	to{ 
+        border-color: transparent ;
+		display:hidden;
+	
+    }
+    }
+}*/
+</style></head>
+<body>
+<!--, blink .50s step-end 7-->
+<form onsubmit="startGame()">
+<!--<input class="left" id="p1" type="text" placeholder="Enter Name" required>
+<input class="right"  id="p2" type="text" placeholder="Enter Name" required>-->
+<input type="submit">
+</form>
+<center>
+
+
+<canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
+</center>
+<script>
+ 
+
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var p1,p2;
+console.log(p1);
+// Key Codes
+var W = 87;
+var S = 83;
+var UP = 38;
+var DOWN = 40;
+
+// Keep track of pressed keys
+var keys = {
+  W: false,
+  S: false,
+  UP: false,
+  DOWN: false
+};
+
+// Create a rectangle object - for paddles, ball, etc
+function makeRect(x, y, width, height, speed, color) {
+  if (!color) color = '#47f5a9';
+  return {
+    x: x,
+    y: y,
+    w: width,
+    h: height,
+    s: speed,
+    c: color,
+    draw: function() {
+      context.fillStyle = this.c;
+      context.fillRect(this.x, this.y, this.w, this.h);
+    }
+  };
+}
+
+// Create the paddles
+var paddleWidth = 25;
+var paddleHeight = 100;
+var leftPaddle = makeRect(25, canvas.height / 2 - paddleHeight / 2, paddleWidth, paddleHeight, 5, '#BC0000');
+var rightPaddle = makeRect(canvas.width - paddleWidth - 25, canvas.height / 2 - paddleHeight / 2, paddleWidth, paddleHeight, 5, '#0000BC');
+
+// Keep track of the score
+var leftScore = 0;
+var rightScore = 0;
+
+// Create the ball
+var ballLength = 15;
+var ballSpeed = 2;     
+var ball = makeRect(0, 0, ballLength, ballLength, ballSpeed, '#000000');
+
+// Modify the ball object to have two speed properties, one for X and one for Y
+ball.sX = ballSpeed;
+ball.sY = ballSpeed / 2;
+
+// Randomize initial direction
+if (Math.random() > 0.5) {
+  ball.sX *= -1;
+}
+// Randomize initial direction
+if (Math.random() > 0.5) {
+  ball.sY *= -1;
+}
+
+// Reset the ball's position and speed after scoring
+function resetBall() {
+  ball.x = canvas.width / 2 - ball.w / 2;
+  ball.y = canvas.height / 2 - ball.w / 2;
+  ball.sX = ballSpeed;
+  ball.sY = ballSpeed / 2;
+}
+
+// Bounce the ball off of a paddle
+function bounceBall() {
+	// Increase and reverse the X speed
+	if (ball.sX > 0) {
+  	ball.sX += 1;
+    // Add some "spin"
+    if (keys.UP) {
+      ball.sY -= 1;
+    } else if (keys.DOWN) {
+      ball.sY += 1;
+    }
+  } else {
+  	ball.sX -= 1;
+    // Add some "spin"
+    if (keys.W) {
+      ball.sY -= 1;
+    } else if (keys.S) {
+      ball.sY += 1
+    }
+  }
+  ball.sX *= -1;
+}
+
+// Listen for keydown events
+canvas.addEventListener('keydown', function(e) {
+  if (e.keyCode === W) {
+    keys.W = true;
+  }
+  if (e.keyCode === S) {
+    keys.S = true;
+  }
+  if (e.keyCode === UP) {
+    keys.UP = true;
+  }
+  if (e.keyCode === DOWN) {
+    keys.DOWN = true;
+  }
+});
+
+// Listen for keyup events
+canvas.addEventListener('keyup', function(e) {
+  if (e.keyCode === W) {
+    keys.W = false;
+  }
+  if (e.keyCode === S) {
+    keys.S = false;
+  }
+  if (e.keyCode === UP) {
+    keys.UP = false;
+  }
+  if (e.keyCode === DOWN) {
+    keys.DOWN = false;
+  }
+});
+
+// Show the menu
+function menu() {
+  erase();
+  // Show the menu
+  context.fillStyle = '#000000';
+  context.font = '24px Arial';
+  context.textAlign = 'center';
+  
+  context.fillText('Press Any Key TO Start', canvas.width / 2, canvas.height / 3);
+  context.font = '14px Arial';
+  context.textAlign = 'left';
+  context.fillText('RED: W (up) and S (down)', 5, (canvas.height / 3) * 2);
+  context.textAlign = 'right';
+  context.fillText('BLUE: UP (up) and DOWN (down)', canvas.width - 5, (canvas.height / 3) * 2);
+  // Start the game on a click
+  canvas.addEventListener('click', startGame);
+}
+
+// Start the game
+function startGame() {
+	// Don't accept any more clicks
+  canvas.removeEventListener('click', startGame);
+  
+  // Put the ball in place
+  resetBall();
+  // Kick off the game loop
+  draw();
+}
+
+// Show the end game screen
+function endGame() {
+	erase();
+  context.fillStyle = '#000000';
+  context.font = '24px Arial';
+  context.textAlign = 'center';
+
+  if (rightScore === 10){ context.fillText('blue is  winner!', canvas.width/2, canvas.height/2);}
+  context.fillText('Red is  winner!', canvas.width/2, canvas.height/2);
+}
+
+// Clear the canvas
+function erase() {
+  context.fillStyle = '#47f5a9';
+  context.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+// Main draw loop
+function draw() {
+  erase();
+  // Move the paddles
+  if (keys.W) {
+    leftPaddle.y -= leftPaddle.s;
+  }
+  if (keys.S) {
+    leftPaddle.y += leftPaddle.s;
+  }
+  if (keys.UP) {
+    rightPaddle.y -= rightPaddle.s;
+  }
+  if (keys.DOWN) {
+    rightPaddle.y += rightPaddle.s;
+  }
+  // Move the ball
+  ball.x += ball.sX;
+  ball.y += ball.sY;
+  // Bounce the ball off the top/bottom
+  if (ball.y < 0 || ball.y + ball.h > canvas.height) {
+    ball.sY *= -1;
+  }
+  // Don't let the paddles go off screen
+  [leftPaddle, rightPaddle].forEach(function(paddle) {
+    if (paddle.y < 10) {
+      paddle.y = 10;
+    } 
+    if (paddle.y + paddle.h > canvas.height) {
+      paddle.y = canvas.height - paddle.h;
+    }
+  });
+  // Bounce the ball off the paddles
+  if (ball.y + ball.h/2 >= leftPaddle.y && ball.y + ball.h/2 <= leftPaddle.y + leftPaddle.h) {
+    if (ball.x <= leftPaddle.x + leftPaddle.w) {
+      bounceBall();
+    }
+  } 
+  if (ball.y + ball.h/2 >= rightPaddle.y && ball.y + ball.h/2 <= rightPaddle.y + rightPaddle.h) {
+    if (ball.x + ball.w >= rightPaddle.x) {
+      bounceBall();
+    }
+  }
+  // Score if the ball goes past a paddle
+  if (ball.x < leftPaddle.x) {
+    rightScore++;
+    resetBall();
+    ball.sX *= -1;
+  } else if (ball.x + ball.w > rightPaddle.x + rightPaddle.w) {
+    leftScore++;
+    resetBall();
+    ball.sX *= -1;
+  }
+  // Draw the paddles and ball
+  leftPaddle.draw();
+  rightPaddle.draw();
+  ball.draw();
+   
+  context.fillStyle = '#000000';
+  context.font = '24px Arial';
+  context.textAlign = 'left';
+  if(leftScore >= 7)
+  {
+   var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+   gradient.addColorStop("0"," magenta");
+   gradient.addColorStop("0.5", "blue");
+   gradient.addColorStop("1.0", "red");
+   context.fillStyle = gradient; 
+  }
+  context.fillText('Score: ' + leftScore, 5, 24);
+  context.textAlign = 'right';
+  if(rightScore >= 7)
+  {
+   var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+   gradient.addColorStop("0"," magenta");
+   gradient.addColorStop("0.5", "blue");
+   gradient.addColorStop("1.0", "red");
+   context.fillStyle = gradient; 
+  }
+  context.fillText('Score: ' + rightScore, canvas.width - 5, 24);
+  
+  // End the game or keep going
+  if (leftScore === 10 || rightScore === 10) {
+  	endGame();
+  } else {
+  	window.requestAnimationFrame(draw);
+  }
+}
+
+// Show the menu to start the game
+menu();
+canvas.focus();
+
+</script>
+<div class="rotate1"></div>
+<div class="rotate2"></div>
+<div class="rotate3"></div>
+<div class="rotate4"></div>
+<div class="rotate5"></div>
+</body>
+</html>

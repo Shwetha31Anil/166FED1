@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           <title>form validation</title>
+           <style>
+           
+           </style>
+  
+    </head>
+    <body>
+           
+           <form action=""name="val" onsubmit="valid()">
+            <table>
+               <tr>  <td>Name</td>
+                     <td><input type="text" id="input1" required maxlength="10" minlength="3">
+               </tr>
+               <tr>  <td>Email</td>
+                <td><input type="email" id="input4" required maxlength="10" minlength="3">
+          </tr>
+          
+               <tr>  <td>Date of Birth</td>
+                <td><input type="date" id="input2" required>
+               </tr>
+           
+               <tr>  <td>Phone Number</td>
+               <td><input type="number" id="input3"required>
+               </tr>
+                <tr>  <td>Graduation Level</td>
+                <td><input type="radio" name="grd" onchange="check(this.value)" value="ug">ug<br>
+                    <input type="radio" name="grd" onchange="check(this.value)" value="pg">pg<br>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        Qualification : 
+                    </td>
+                    <td>
+                        <select id="qua">
+                            <option>Qualification level</option>
+                        </select>
+                        <script>
+                               function check(grd){ 
+                               if(grd == "ug")
+                           {   var select = document.getElementById("qua");
+                                  select.options.length = 0;  
+                           select.options[select.options.length] = new Option('____', 'v1');
+                           select.options[select.options.length] = new Option('BCA', 'v2');
+                           select.options[select.options.length] = new Option('BBA', 'v3');
+                           select.options[select.options.length] = new Option('B.sc', 'v4');
+                          }
+                            else  if(grd == "pg")
+                           {   
+                           var select = document.getElementById("qua");
+                               select.options.length = 0;
+                           select.options[select.options.length] = new Option('---', '');
+                           select.options[select.options.length] = new Option('MCA', 'v5');
+                           select.options[select.options.length] = new Option('MBA', 'v6');
+                           select.options[select.options.length] = new Option('M.sc', 'v7');
+                          }
+                            else
+                            {}
+                        
+                            }   </script>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit"></td>
+                        <td><input type="button" id="clik" onsubmit="preview()" value="preview"</td>
+                        </tr>
+                </table>
+        </form> 
+       <script>
+           function preview()
+               {
+                   var i1=document.getElementById('input1').value;
+                   var i2=document.getElementById('input2').value;
+                   var i3=document.getElementById('input3').value;
+                   var i4=document.getElementById('input4').value;
+                   var i5=document.getElementById('qua').value;
+                   var i6=document.getElementById('grd').value;
+                   var date=new Date(i2);
+                   var age = ~~ ((Date.now() - date) / (31557600000));
+                   alert("<table><tr><td>Name :</td><td>"+i1+"</td></tr><tr><td>age:</td><td>"+age+"</td></tr><tr><td>email</td><td>"+i4+"</td></tr><tr><td>phonenumber</td><td>"+i3+"</td></tr><tr><td>Graduation level</td><td>"+i6+"</td></tr><tr><td>Qualification</td><td>"+i5+"</td></tr></tabel>");
+
+               }
+           
+                   
+       </script>
+           
+     </body>
+    </html>

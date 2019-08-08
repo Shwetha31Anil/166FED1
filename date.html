@@ -1,0 +1,27 @@
+<html>
+<head>
+	   <link href="jquery-ui.css" rel="stylesheet">
+	   <link href="jquery-ui.theme.css" rel="stylesheet">
+	   <link href="jquery-ui.structure.css" rel="stylesheet">
+	   <title>Jquery UI</title>
+	    <script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+			 
+</head>
+<body>
+      <!-- text() html() attr() css() append() after() prepend() before() remove() empty() addclass() removeClass() toggleclass()
+	   datepicker tootip progressbar accordian,tabs -->
+     <h1>Jquery Date Picker</h1>
+	 <input type="text" id="datp">
+     <script>	
+                 $("#datp").datepicker({
+				          numberOfMonths:1,
+						  changeYear:true,
+						  changeMonth:true,
+						  minDate:new Date(2019,5,1),
+						  maxDate:new Date(2022,6,8);
+				 });
+				 </script>
+                  				 
+</body> 
+ <html>

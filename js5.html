@@ -1,0 +1,38 @@
+<html>
+     <head>
+          <title> Js/prime</title>
+	      <script>
+		                
+						function Loop()
+						{
+						   var num = parseInt(document.getElementById("num").value);
+	                       var i=2;
+						   var j=0;
+						   while(i <= num)
+						    {
+							  count=0;
+						     for(j=1;j<= i/2;j++)
+							 {
+                              if(i%j == 0)
+								{
+								  count++;
+								}
+						     }		
+						  if(count <2)
+						  //document.write("prime"+i+"<br/>");
+						  //else
+						  //document.write("not a prime"+i+"<br/>");
+						  document.getElementById("res").insertAdjacentHTML('beforeend',i+'<br/>');
+			              i++;
+						 }
+                          document.getElementById("res").insertAdjacentHTML('beforeend','<hr/>');
+                            							
+                        }					
+		   </script>
+		   </head>
+		   <body>
+		          <input type="number" placeholder="number" id="num" onkeyup="Loop()">
+				  <input type="button" onclick="Loop()" value="prime">
+				  <div id="res"></div>
+		   </body>
+</html>		   

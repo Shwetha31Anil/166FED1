@@ -1,0 +1,39 @@
+<html>
+<head>
+	   <link href="jquery-ui.css" rel="stylesheet">
+	   <link href="jquery-ui.theme.css" rel="stylesheet">
+	   <link href="jquery-ui.structure.css" rel="stylesheet">
+	   <title>Jquery UI || Date Picker</title>
+	    <script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+			 
+</head>
+<body>
+      <!-- text() html() attr() css() append() after() prepend() before() remove() empty() addclass() removeClass() toggleclass()
+	   datepicker tootip progressbar accordian,tabs -->
+     <h1>Jquery Date Picker</h1>
+	 <input type="text" id="datp">
+      <div id="panels">
+                      <div>HTML</div>
+                      <div>Html is a language is used for web development.Html 4 is static web pages.</div>	
+                      <h3>css</h3>
+					   <p>CSS is Cascading Style Sheet used for styling of web pages and to do aniamtions.
+					   CSS is Cascading Style Sheet used for styling of web pages and to do aniamtions.</p>
+					   <h3>JS</h3>
+					   <p> JS is java script used for event handling and to do validation.
+					       JS is JavaScript used for event handling and to do validation.</p>
+					   
+	  </div>				   
+       					  
+	<script>	
+                 $("#datp").datepicker({
+				          
+						  changeYear:true,
+						  changeMonth:true,
+						  minDate:new Date(2019,5,1),
+						  maxDate:new Date(2022,6,8)
+				 });
+				 </script>
+                  				 
+</body> 
+ </html>

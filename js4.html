@@ -1,0 +1,30 @@
+<html>
+     <head>
+          <title> Js/Loops</title>
+	      <script>
+		                
+						function Loop()
+						{
+						   var num = parseInt(document.getElementById("num").value);
+	                       var temp=num,r;
+						   var pal=0;
+						   
+                           while(num>0)
+                           {
+                               r=num%10;
+							   pal=(pal*10)+r;
+							   num=parseInt(num/10);
+						   }
+						  if(pal == temp)
+						  document.write("palindrome");
+						  else
+						  document.write("not a palindrome");
+						   
+                        }					
+		   </script>
+		   </head>
+		   <body>
+		          <input type="number" placeholder="number" id="num">
+				  <input type="button" onclick="Loop()" value="Loop">
+		   </body>
+</html>		   

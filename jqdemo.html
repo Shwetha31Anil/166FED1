@@ -1,0 +1,102 @@
+<html>
+           <head>
+		           <title> JQuery </title>
+				   <style>
+				            #cubes{
+							       width:50px;
+								   height:50px;
+								   background-color:blueviolet;
+								   opacity:0.4;
+								   position:absolute;
+								  
+								  } 
+				           .mydivs{
+						            border : 3px solid   ;
+									margin : 8px;
+									padding:15px;
+								   }
+                            div p {
+                                    color:black;
+                                   }
+                   </style>								   
+		   </head>
+      <body>
+	          <h2 id="h2"> Sample Text</h2>
+			  <button  id="btn1">Toggle</button>
+			  <button  id="btn2">fdIn</button>
+			  <button  id="btn3">fdOut</button>
+              <div id="firstdiv" class="mydivs">
+              <p>This is the first paragraph in first division</p>
+              <p>This is the second paragraph in first division</p>
+			  </div>
+              <div>
+              <div id="seconsdiv" class="mydivs">
+              <p>This is the second paragraph in first division</p>
+              </div>	
+              <div id="thirddiv" class="mydivs">
+                  <ul>
+				  <li>List item1</li>
+				  <li>List item2</li>
+				  <li>List item3</li>
+				  <li>List item4</li>
+				  </ul>
+              </div>
+             			
+			  <script src="js/jquery.js"></script>
+			  <script>
+			        
+		</script>		
+   			  <div>
+			       <div id="cubes" class="mycube"></div>
+              </div>
+			  <br>
+			  <br>
+			  <div>
+			  <br>	
+             <br>
+            <br>
+            <br>
+            <br>
+			  <button  id="btn4">Toggle</button>
+			  <button  id="btn5">fdIn</button>
+			  <button  id="btn6">fdOut</button>
+			  </div>
+			  <script>
+			          $(document).ready(function (){
+									$("#btn1").dblclick(function (){
+									$(".mydivs p:even").toggle(4500);
+									$(".mydivs p:odd").toggle(5500);
+									
+														      });
+					                           }
+								    );
+			        fn1();
+			          function fn1()
+					  {
+					   $("#h2").fadeIn(1500);
+					   fn2();
+					  }
+					 function fn2()
+					  {
+					   $("#h2").fadeOut(1500);
+					   fn1();
+					  } 
+			           $("#btn6").click(function(){
+					     $("#cubes").animate({
+						 left:'250px',
+						 opacity:'1',
+						 width:'200px',
+						 height:'100px'},2000)}
+						);
+					  $("#btn4").click(function(){
+					      $("#firstdiv").fadeIn(2000,function(){
+						   alert("fade in done");
+						   });
+					   });
+					  $("btn5").click(function(){
+					   $("#firstdiv").slideUp(2000).slideDown(2000).fadeOut(1000).fadeIn(1000);
+					  }); 
+                    					   
+			  </script>
+				   </body>
+</html>

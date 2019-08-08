@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Files location</title>
+</head>
+<body >
+	<table border="1" style="border:3px solid blue;">
+     <tr>
+     	  <td colspan="2" style="text-align: center;"><b>Location Object Properties</b></td>
+     	</tr> 
+
+     	<tr>
+     	  <td>Href</td>
+     	  <td id="hreff"></td>
+     	  </tr>
+
+     	  <tr>
+     	  <td>Pathname</td>
+     	  <td id="path" ></td>
+     	</tr>
+
+     	<tr>
+     		<td>Protocol</td>
+     		<td id="protocoll"></td>
+
+     	</tr>
+
+     </table>
+<script type="text/javascript">
+	document.getElementById('hreff').innerHTML=window.location.href;
+	document.getElementById('path').innerHTML=window.location.pathname;
+	document.getElementById('protocoll').innerHTML=window.location.protocol;
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

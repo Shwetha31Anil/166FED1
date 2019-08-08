@@ -1,0 +1,115 @@
+<html>
+     <head>
+	        <title>Employee Details</title>
+			
+			<style>
+			       table{
+				         background-color:deepskyblue;
+						
+						 }
+			       th{
+				       text-align:left;
+					  } 
+				 span{
+                       color:red;
+                      }	
+                textarea{
+                                size: auto;
+                        }								
+			</style>
+	 </head>
+	 <body>
+	       <table border="1">
+		         <tr>
+				    <th>Name<span>*</span> </th>
+					<td><input type="text" maxlength="20" ></td>
+				 </tr>			
+	       
+		         <tr>
+				    <th>Phone No.<span>*</span></th>
+					<td><input type="text" maxlength="10">  </td>
+				 </tr>
+                 <tr>
+				    <th>Password<span>*</span></th>
+					<td><input type="password" maxlength="10">  </td>
+				 </tr>	
+                 <tr>
+                     <th>Gender<span>*</span></th>
+                     <td> <input type="radio" name="gender" value="M"> Male &nbsp <input type="radio" name="gender" value="F"> Female</td>
+                  </tr> 
+                 <tr>
+				    <th>date  <span>*</span></th>
+					<td> 
+                          <select id="dd">
+						  
+						    <script>
+							     var i=0;
+							     for(i=1;i<=31;i++)
+								 {
+								   document.write("<option>"+i+"</option>");
+								  }
+                            </script>
+							</select>
+							<select>
+							<script>
+							     var i=0;
+							     for(i=1;i<=12;i++)
+								 {
+								   document.write("<option>"+i+"</option>");
+								  }
+                            </script>
+							</select>
+							<select>
+							<script>
+							     var i=0;
+							     for(i=1997;i<=2200;i++)
+								 {
+								   document.write("<option>"+i+"</option>");
+								  }
+                            </script>
+							</select><br>
+							&nbsp&nbsp dd &nbsp&nbsp&nbsp&nbsp mm &nbsp&nbsp&nbsp yyyy
+							
+                         							
+					</td>
+				 </tr>
+                 <tr>
+				    <th>email <span>*</span> </th>
+					<td><input type="email">   </td>
+				 </tr>
+                  <tr>
+				    <th>Highest Qualification<span>*</span></th>
+					<td>
+                                     <select name="qua">
+                                        
+                                      <option>select highest qualification</option>
+                                           <option>PG</option>
+                                           <option>UG</option>
+										   <option>Inter</option>
+                                     </select>
+					</td>
+				 </tr>				 
+	              
+		         <tr>
+				    <th>course Intersted in<span>*</span></th>
+					<td><input type="checkbox" name="Language" value="H">HTML/DHTML
+                        <input type="checkbox" name="Language" value="J">Java
+                        <input type="checkbox" name="Language" value="CS">ent/Server
+                       <input type="checkbox" name="Language" value="E" >.NET            
+                    </td>
+				 </tr>
+	            <tr>
+				 <tr>
+				  <th>Comments(Mention External certifications if any)</th>
+				  <td><textarea rows="5" cols="25"></textarea>   </td>
+				 </tr>
+				 <tr>
+				    <th>UPload files<span>*</span> </th>
+					<td> <input type="file"></td>
+				 </tr>
+                <tr>
+                   <th></th>
+                   <td><input type="submit" id="subit"onclick="" value="submit information"/>&nbsp&nbsp<input type="reset" value="cancle"/>				   
+			</table>	 
+	 </body>
+</html>

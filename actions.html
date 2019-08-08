@@ -1,0 +1,67 @@
+<html>
+<head>
+	   <link href="jquery-ui.css" rel="stylesheet">
+	   <link href="jquery-ui.theme.css" rel="stylesheet">
+	   <link href="jquery-ui.structure.css" rel="stylesheet">
+	   <title>Jquery UI</title>
+	    <script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+			 
+</head>
+<body>
+      <!-- text() html() attr() css() append() after() prepend() before() remove() empty() addclass() removeClass() toggleclass()
+	   datepicker tootip progressbar accordian,tabs
+	  -->
+     <h1>Jquery DOM Manipulation</h1>
+	 <button class="b" id="btn1">Action-txt</button>
+	 <button class="b" id="btn2">Action-html</button>
+     <button class="b" id="btn3">Action-attr</button>
+	 <button class="b" id="btn4">Action-css</button>
+	 <button class="b" id="btn5">Action-aped</button>
+	 <button class="b" id="btn6">Action-aftr</button>
+	 <button class="b" id="btn7">Action-pre</button>
+	 <button class="b" id="btn8">Action-bfor</button>
+	 <button class="b" id="btn9">add class</button>
+	 <button class="b" id="btn10">Toggle</button>
+
+	 <br>
+	 <div id="divi">
+              <p id="p1">first <b>para</b> in onr division</p>
+			  <p id="p2">second para in onr division</p>
+	 </div>
+</body>
+<script>
+        $(document).ready(function(){
+		  $("#btn1").click(function (){
+		                   alert($("div p:first").text());
+		 });
+		 $("#btn2").click(function (){
+		                   alert($("div p:first").html());
+		 });
+		 $("#btn3").click(function (){
+		                   alert($("div p:first").attr("id"));
+		 });
+		 $("#btn4").click(function (){
+		                   alert($("div p:first").css("color"));
+		 });
+		 $("#btn5").click(function (){
+		                   $("div").append("<h1>this text is appended</h1>");
+		 });
+		 $("#btn7").click(function (){
+		                   $("div").prepend("this text is prepend");
+		 });
+		 $("#btn8").click(function (){
+		                   $("div").before("this text is before");
+		 });
+		 $("#btn6").click(function (){
+		                   $("div").after("this text is after");
+		 });
+		 $("#btn9").click(function (){
+		                   $(".b").addClass("butn");
+		 });
+		 $("#btn10").click(function (){
+		                   $(".b").toggleClass("butn");
+		 });
+		});
+</script>
+<html>

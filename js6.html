@@ -1,0 +1,64 @@
+<html>
+     <head>
+          <title> Js/date and contents</title>
+	      <script>
+		                
+						
+						   function datalist(){
+						   dateinfo=new Date();
+                           document.write(dateinfo.getDate()+": Day of the month<br/>");
+                           document.write(dateinfo.getDay()+" days of the week(0-6)<br/>");
+                           document.write(dateinfo.getHours()+"hours of the day<br/>");
+                           document.write(dateinfo.getMinutes()+"minutes in the hours<br/>");
+                           document.write(dateinfo.getSeconds()+"seconds in the minutes<br/>");
+                           document.write(dateinfo.getMonth()+"months <br/>");
+                           document.write(dateinfo.getTime()+"milliseconds<br/>");
+                           document.write(dateinfo.getFullYear()+"<br/>");	
+                           document.write(dateinfo.getTimezoneOffset()+"offset between local time and GMT" + "<br>");
+                           doj=new Date();
+                           doj.setDate(11);
+                           doj.setMonth(05);
+                           doj.setYear(2010);
+                           document.write(doj);						   
+                           document.write("<hr/>");
+						   }
+						   function content(){
+                           var txt="some text";
+                           document.write("<p> <br>big"+txt.big()+"<br>");
+                           document.write("<p> small........"+txt.small()+"<br>");  
+                           document.write("<p> bold........"+txt.bold()+"<br>");
+                           document.write("<p> strike......."+txt.strike()+"<br>");
+                           document.write("<p>  font color........"+txt.fontcolor("red")+"<br>");
+                           document.write("<p> font size........"+txt.fontsize(16)+"<br>");
+                           document.write("<p>  lower........"+txt.toLowerCase()+"<br>");
+                           document.write("<p> upper........"+txt.toUpperCase()+"<br>");
+                           document.write("<p> fiexd........"+txt.fixed()+"<br>");
+                           document.write("<p> super........"+txt.sup()+"<br>");
+                           document.write("<p> subscript........"+txt.sub()+"<br>");  
+                           document.write("<p> Link"+txt.link("http://www.google.com")+"<br>");
+                           document.write(dateinfo.toUTCString()+"time set by the WorldTime Standard Universal coordinated time");    
+                           document.write("<hr/>");
+	                       }
+						   function stringc(){
+                           var str="abc";
+						   var str1="bananas";
+						   var len=str1.length;
+						   document.write("chat At : "+str1.charAt(len-1)+"<br/><br/>");
+                           document.write("char Codeat "+str1.charCodeAt(1)+"<br>");
+                           document.write("fromCharCode "+String.fromCharCode(97,98,99)+"<br>");
+                           document.write("<p>indexOf "+str1.indexOf("a",2)+"<br>");
+                           document.write("<p> lastIndexOf "+str1.lastIndexOf("a")+"<br>");
+                           document.write("<p> match "+str1.match("man")+"<br>");
+                           document.write("<p> replace "+str1.replace("nan","man")+"<br>");
+                           //document.write("<p> Big"+str.()+"<br>");
+                           //document.write("<p> Big"+str.()+"<br>");						   
+		                   }
+		   </script>
+		   </head>
+		   <body>
+				  <input type="button" id="dte"onclick="datalist()" value="Date"/>
+				  <input type="button" id="cont"onclick="content()" value="HTML"/>
+				  <input type="button" id="str"onclick="stringc()" value="string"/>
+				  <div id="res"></div>
+		   </body>
+</html>		   

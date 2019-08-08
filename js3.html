@@ -1,0 +1,30 @@
+<html>
+     <head>
+          <title> Js/Onclick</title>
+	      <script>
+		                function switchdemo()
+						{
+						   var i = parseInt(document.getElementById("num").value);
+						   switch(i){
+						                 case 1 : document.write(56+67+"<br/>");
+										         break;
+						                 case 2 : document.write(56+61+"<br/>");
+										         break;
+						                 case 3 : document.write(56+62+"<br/>");
+										         break;
+						                 case 4 : document.write(56+63+"<br/>");
+										         break;
+						                 case 5 : document.write(56+64+"<br/>");
+										         break;
+						                 case 6 : document.write(56+65+"<br/>");
+										         break;
+										 default: document.write("invalid");
+										}
+					 }					
+		   </script>
+		   </head>
+		   <body>
+		          <input type="number" placeholder="number" id="num">
+				  <input type="button" onclick="switchdemo()" value="switch">
+		   </body>
+</html>		   

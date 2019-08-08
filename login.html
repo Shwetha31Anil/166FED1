@@ -1,0 +1,56 @@
+<html>
+     <head>
+          <title> login</title>
+		  <link href="sam2.css" rel="stylesheet" type="text/css">
+		  <script>
+		             function validate()
+					{
+		                 var uname=document.getElementById("un");
+                         var pwd=document.getElementById("pwd");
+					     if(uname.value.trim() == "")
+					    {
+					       uname.style.border="solid 3px red";
+						   document.getElementById("al").style.visibility="visible";
+						   return false;
+					    }
+					     else if(pwd.value.trim() == "")
+					    {
+					       pwd.style.border="solid 3px red";
+					       document.getElementById("a2").style.visibility="visible";
+					       return false;
+					    }
+					     else if(pwd.value.trim().length <5) 
+					    {
+					       pwd.style.border="solid 3px red";
+					       document.getElementById("a2").style.visibility="visible";
+					       return false;
+					    }
+					     else
+					     return true;
+                    }
+		  </script>
+     </head>
+     <body>
+           <fieldset>
+           <legend align="center">Login</legend>
+           <form name="login" onsubmit="return validate()" method="get" action="f1.html" align="left" autocomplete="off" width="50%" >
+                <label>Login Page</label>
+                <br/>
+                <br/>
+                <input type="text" placeholder="username" id="un" >
+                <p id="al"style="color:blue;visibility:hidden"> username required</p>
+                <input type="password" placeholder="********" id="pwd">
+		        <p id="a2"style="color:blue;visibility:hidden">must be greaterthan 8</p>
+                <input type="submit"/>&nbsp&nbsp<input type="reset" float="right"/> 
+          </form>
+          </filedset>
+          <hr/>
+          <ol type="I">
+                      <li><a href="f1.html">html contents</a><br/>
+                      <li><a href="f2.html">image demo</a>
+                      <li><a href="f3.html">List & Table</a><br/>
+                      <li><a href="f5.html">sign up</a><br/>
+
+           </ol> 
+     </body>
+</html>
