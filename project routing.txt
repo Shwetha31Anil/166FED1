@@ -1,0 +1,123 @@
+ng g c header
+ng g c footer
+ng g c home
+
+header.component.ts
+
+title='project name';
+
+header.component.html
+
+<h1>{{title}}</h1>
+
+footer.component.html
+do center align in css
+<p>copywrite @ projectname</p>
+
+
+app.component.html
+----------------------------------------------------
+
+<app-header><app-header>
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
+
+
+app.module.ts
+------------------------------
+
+const appRoutes:Routes =
+[
+{path: ' ' ,component:LoginComponent}
+{path:'home', component: HomeComponent,
+ children : [
+	{path:'add',component:AddFlightComponent},
+	{path:'retriveall',component:GetFlightComponent},
+	{path:'update/:id',component:UpdateFlightComponent},
+	{path:'retiveall/:id',component:GetFlightByIdComponent}
+]
+}
+];
+
+login.component.ts
+-----------------------------
+
+ this.router.navigate(['/home']);
+
+
+home.component.html
+-------------------------------------
+
+<div>
+	<a [routerLink]="['add']">AddFlight</a>&nbsp;
+	<a [routerLink]="['retriveAll']">Flights</a>
+</div>
+<div>
+	<router-outlet></router-outlet>
+</div>
+
+
+Update:
+-----------------------------------------------------------
+
+Step 1:
+-----------------------------------
+{
+  path: 'edit/:id',
+  component: CreateEmployeeComponent
+}
+
+Step 2:
+--------------------------
+createEmployee.component.ts
+
+
+ ngOnInit() {
+  this._route.paramMap.subscribe(parameterMap => {
+    const id = +parameterMap.get('id');
+    this.getEmployee(id);
+  });
+}
+
+ saveEmployee(empForm: NgForm): void {
+  const newEmployee = Object.assign({}, this.employee);
+  this._employeeService.save(newEmployee);
+  empForm.reset();
+  this._router.navigate(['list']);
+}
+
+
+ private getEmployee(id: number) {
+  // If the id is 0, we want to create a new employee. So we intialise the employee 
+  // property with an Employee object with all properties set to null. The template 
+  // is bound to this employee property so all the form fields are displayed blank, 
+  // to enter details of a new employee we want to create
+  if (id === 0) {
+    this.employee = {
+      id: null,
+      name: null,
+      gender: null,
+      contactPreference: null,
+      phoneNumber: null,
+      email: '',
+      dateOfBirth: null,
+      department: null,
+      isActive: null,
+      photoPath: null
+    };
+    // Resetting the form, resets any previous validation errors
+    this.createEmployeeForm.reset();
+    this.panelTitle = 'Create Employee';
+  } else {
+ this.employee = Object.assign({}, this._employeeService.getEmployee(id));
+    this.panelTitle = 'Edit Employee';
+  }
+
+
+
+
+
+
+                                                          
